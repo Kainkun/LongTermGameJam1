@@ -12,7 +12,7 @@ public class EnemySpawnerEditor : Editor
                        waitUntilDeath,
                        spawnOffCamera,
                        spawnTime,
-                       spawnCount,
+                       maxSpawnCount,
                        spawnTimes;
 
     void OnEnable()
@@ -22,7 +22,7 @@ public class EnemySpawnerEditor : Editor
         waitUntilDeath = serializedObject.FindProperty("waitUntilDeath");
         spawnOffCamera = serializedObject.FindProperty("spawnOffCamera");
         spawnTime = serializedObject.FindProperty("spawnTime");
-        spawnCount = serializedObject.FindProperty("spawnCount");
+        maxSpawnCount = serializedObject.FindProperty("maxSpawnCount");
         spawnTimes = serializedObject.FindProperty("spawnTimes");
     }
     
@@ -46,7 +46,8 @@ public class EnemySpawnerEditor : Editor
             case (EnemySpawner.SpawnerType.Respawnable):
                 EditorGUILayout.PropertyField(spawnOffCamera);
                 EditorGUILayout.PropertyField(waitUntilDeath);
-                EditorGUILayout.PropertyField(spawnCount);
+                EditorGUILayout.PropertyField(spawnTime);
+                EditorGUILayout.PropertyField(maxSpawnCount);
                 break;
 
             
