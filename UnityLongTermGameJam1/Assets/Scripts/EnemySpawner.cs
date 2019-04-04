@@ -26,8 +26,12 @@ public class EnemySpawner : MonoBehaviour{
     private bool waitUntilDeath = false;
 
     [SerializeField]
-    [Tooltip("Spawn the enemy only if the spawner is on camera")]
+    [Tooltip("let the enemy spawn if the camera can't see the spawner")]
     private bool spawnOffCamera;
+
+    [SerializeField]
+    [Tooltip("Delay for the spawner (in seconds)")]
+    private float spawnDelay = 1;
 
     [Space]
 
@@ -71,7 +75,7 @@ public class EnemySpawner : MonoBehaviour{
                 }
 
                 if (currCount < 1){ //We do this check so we only spawn a single enemy here
-                    StartCoroutine(spawn(enemyToSpawn));
+                    StartCoroutine(spawn(enemyToSpawn, spawnDelay));
                 }
                 break;
 

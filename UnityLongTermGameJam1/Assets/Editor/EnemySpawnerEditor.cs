@@ -13,7 +13,8 @@ public class EnemySpawnerEditor : Editor
                        spawnOffCamera,
                        spawnTime,
                        maxSpawnCount,
-                       spawnTimes;
+                       spawnTimes,
+                       spawnDelay;
 
     void OnEnable()
     {
@@ -24,6 +25,7 @@ public class EnemySpawnerEditor : Editor
         spawnTime = serializedObject.FindProperty("spawnTime");
         maxSpawnCount = serializedObject.FindProperty("maxSpawnCount");
         spawnTimes = serializedObject.FindProperty("spawnTimes");
+        spawnDelay = serializedObject.FindProperty("spawnDelay");
     }
     
     public override void OnInspectorGUI()
@@ -33,17 +35,23 @@ public class EnemySpawnerEditor : Editor
         EditorGUILayout.PropertyField(spawnerType);
 
         EditorGUILayout.Space();
-        
+
 
         EnemySpawner.SpawnerType st = (EnemySpawner.SpawnerType)spawnerType.enumValueIndex;
 
         switch (st)
         {
             case (EnemySpawner.SpawnerType.SingleLife):
+                EditorGUILayout.SelectableLabel("Spawns an enemy once");
+                EditorGUILayout.Space();
+
                 EditorGUILayout.PropertyField(spawnOffCamera);
+                EditorGUILayout.PropertyField(spawnDelay);
                 break;
 
             case (EnemySpawner.SpawnerType.Respawnable):
+                EditorGUILayout.SelectableLabel("Spawns enemies at a consistant rate");
+                EditorGUILayout.Space();
                 EditorGUILayout.PropertyField(spawnOffCamera);
                 EditorGUILayout.PropertyField(waitUntilDeath);
                 EditorGUILayout.PropertyField(spawnTime);
@@ -52,6 +60,8 @@ public class EnemySpawnerEditor : Editor
 
             
             case (EnemySpawner.SpawnerType.TimedSpawn):
+                EditorGUILayout.SelectableLabel("Spawns enemies at a given time (in seconds)");
+                EditorGUILayout.Space();
                 EditorGUILayout.PropertyField(spawnTimes, true);
                 break;
         }
