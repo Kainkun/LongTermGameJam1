@@ -108,7 +108,6 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator timer(float time)
     {
-        readyToSpawn = false;
         yield return new WaitForSeconds(time);
         readyToSpawn = true;
         yield return null;
@@ -118,5 +117,6 @@ public class EnemySpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         GameObject.Instantiate(enemyToSpawn, this.transform.position, Quaternion.identity, this.transform);
+        readyToSpawn = false;
     }
 }
