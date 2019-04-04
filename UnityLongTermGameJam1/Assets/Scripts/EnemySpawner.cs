@@ -4,10 +4,9 @@ using UnityEngine;
 
 
 
-public class EnemySpawner : MonoBehaviour
-{
-    public enum SpawnerType
-    {
+public class EnemySpawner : MonoBehaviour{
+
+    public enum SpawnerType{
         SingleLife, Respawnable, TimedSpawn
     }
 
@@ -61,8 +60,7 @@ public class EnemySpawner : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
         switch (spawnerType) {
             case (SpawnerType.SingleLife):
                 GameObject.Instantiate(enemyToSpawn, this.transform.position, Quaternion.identity, this.transform);
@@ -106,15 +104,13 @@ public class EnemySpawner : MonoBehaviour
 
     }
 
-    IEnumerator timer(float time)
-    {
+    IEnumerator timer(float time){
         yield return new WaitForSeconds(time);
         readyToSpawn = true;
         yield return null;
     }
 
-    IEnumerator spawn(GameObject go, float time)
-    {
+    IEnumerator spawn(GameObject go, float time){
         yield return new WaitForSeconds(time);
         GameObject.Instantiate(enemyToSpawn, this.transform.position, Quaternion.identity, this.transform);
         readyToSpawn = false;
