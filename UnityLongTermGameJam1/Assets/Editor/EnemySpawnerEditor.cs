@@ -6,6 +6,7 @@ using UnityEngine;
 [CanEditMultipleObjects]
 public class EnemySpawnerEditor : Editor
 {
+
     SerializedProperty enemyToSpawn,
                        spawnerType,
                        waitUntilDeath,
@@ -27,20 +28,33 @@ public class EnemySpawnerEditor : Editor
     
     public override void OnInspectorGUI()
     {
-        serializedObject.Update();
 
+        EditorGUILayout.PropertyField(enemyToSpawn);
         EditorGUILayout.PropertyField(spawnerType);
+
+        EditorGUILayout.Space();
+        
 
         EnemySpawner.SpawnerType st = (EnemySpawner.SpawnerType)spawnerType.enumValueIndex;
 
         switch (st)
         {
-            case (EnemySpawner.SpawnerType.Respawnable):
-                break;
             case (EnemySpawner.SpawnerType.SingleLife):
+                EditorGUILayout.PropertyField(spawnOffCamera);
                 break;
+
+            case (EnemySpawner.SpawnerType.Respawnable):
+                EditorGUILayout.PropertyField(spawnOffCamera);
+                EditorGUILayout.PropertyField(waitUntilDeath);
+                EditorGUILayout.PropertyField(spawnCount);
+                break;
+
+            
             case (EnemySpawner.SpawnerType.TimedSpawn):
+                EditorGUILayout.PropertyField(spawnTimes, true);
                 break;
         }
+
+        serializedObject.ApplyModifiedProperties();
     }
 }

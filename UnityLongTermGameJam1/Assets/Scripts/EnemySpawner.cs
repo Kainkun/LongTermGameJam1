@@ -15,7 +15,7 @@ public class EnemySpawner : MonoBehaviour
     private GameObject enemyToSpawn;
 
     [Space]
-    [Header("Enemy Spawner Toggles")]
+    [Header("Enemy Spawner Properties")]
 
     [SerializeField]
     private SpawnerType spawnerType;
@@ -40,7 +40,7 @@ public class EnemySpawner : MonoBehaviour
     public float spawnCount = -1;
 
     [SerializeField]
-    [Tooltip("Specific times in which an enemy will spawn")]
+    [Tooltip("Specific times in which an enemy will spawn (in seconds)")]
     private float[] spawnTimes;
 
 
