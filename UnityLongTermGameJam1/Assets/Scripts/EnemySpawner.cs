@@ -14,6 +14,10 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private GameObject enemyToSpawn;
 
+    private GameObject currentSpawn;
+
+    private bool readyToSpawn = false;
+
     [Space]
     [Header("Enemy Spawner Properties")]
 
@@ -37,7 +41,9 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField]
     [Tooltip("-1 to spawn an unlimited number of enemies (it never stops)")]
-    public float spawnCount = -1;
+    private int spawnCount = -1;
+    private int currCount = 0;
+
 
     [SerializeField]
     [Tooltip("Specific times in which an enemy will spawn (in seconds)")]
@@ -51,11 +57,66 @@ public class EnemySpawner : MonoBehaviour
         if (render == null) {
             render = this.gameObject.AddComponent<SpriteRenderer>();
         }
+        StartCoroutine(timer(spawnTime));
     }
 
     // Update is called once per frame
     void Update()
     {
-            
+        switch (spawnerType) {
+            case (SpawnerType.SingleLife):
+                GameObject.Instantiate(enemyToSpawn, this.transform.position, Quaternion.identity, this.transform);
+                break;
+
+            case (SpawnerType.Respawnable):
+                if (waitUntilDeath) {
+                    if (currentSpawn != null) { //We have an enemy currently spawned
+                        return;
+                    }
+                }
+
+                //If we are here then we know there is no enemy currently
+                //Or waitUntilDeath is not enabled
+
+                if (spawnOffCamera == false) { //Check if flag is enabled
+                    if (!render.isVisible) { //Check if the spawner is "visible"
+                        return;
+                    }
+                }
+
+                //Timer?
+                if (readyToSpawn) {
+                    StartCoroutine(spawn(enemyToSpawn, 1));
+                    StartCoroutine(timer(spawnTime));
+                }
+
+
+
+                break;
+
+            case (SpawnerType.TimedSpawn):
+
+                foreach (float spawnTime in spawnTimes) {
+                    if (spawnTime == Time.timeSinceLevelLoad) {
+                        GameObject.Instantiate(enemyToSpawn, this.transform.position, Quaternion.identity, this.transform);
+                    }
+                }
+                break;
+        }
+
+    }
+
+    IEnumerator timer(float time)
+    {
+        readyToSpawn = false;
+        yield return new WaitForSeconds(time);
+        readyToSpawn = true;
+        yield return null;
+    }
+
+    IEnumerator spawn(GameObject go, float time)
+    {
+        yield return new WaitForSeconds(time);
+        GameObject.Instantiate(enemyToSpawn, this.transform.position, Quaternion.identity, this.transform);
     }
 }
