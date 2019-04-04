@@ -17,6 +17,6 @@ public class KainEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(0,startPosition.y + Mathf.Sin(Time.time * speed) * distance, 0);
+        transform.position = new Vector3(startPosition.x,startPosition.y + Mathf.Sin(Time.time * speed) * distance, 0);
     }
 }
