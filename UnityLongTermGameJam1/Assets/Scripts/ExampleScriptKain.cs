@@ -8,12 +8,14 @@ public class ExampleScriptKain : MonoBehaviour
     public float SinSpeed;
     public float SinWidth;
 
-    public Vector3 goToPosition;
+    Vector3 startPosition;
+    Vector3 goToPosition;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        startPosition = transform.position;
+        goToPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -21,7 +23,7 @@ public class ExampleScriptKain : MonoBehaviour
     {
 
         goToPosition.x += MoveSpeed * Time.deltaTime;
-        goToPosition.y = Mathf.Sin(Time.time * SinSpeed) * SinWidth;
+        goToPosition.y = startPosition.y + Mathf.Sin(Time.time * SinSpeed) * SinWidth;
 
         transform.position = goToPosition;
 
