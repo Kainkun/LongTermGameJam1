@@ -10,7 +10,8 @@ public class KainEnemy : MonoBehaviour
     public float speed = 1;
     public float distance = 1;
     Vector3 startPosition;
-
+    [SerializeField]
+    private int health;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,5 +43,24 @@ public class KainEnemy : MonoBehaviour
                 break;
         }
         
+    }
+    private void takeDamage(int amount)
+    {
+        health -= amount;
+        if (health <= 0)
+            die();
+    }
+    private void die()
+    {
+        Destroy(gameObject);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        playerBullet bullet= collision.gameObject.GetComponent<playerBullet>();
+        if (bullet != null) {
+            takeDamage(bullet.damage);
+            Destroy(collision.gameObject);
+        }
+
     }
 }
