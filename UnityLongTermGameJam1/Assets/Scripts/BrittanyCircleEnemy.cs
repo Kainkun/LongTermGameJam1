@@ -5,6 +5,9 @@ using UnityEngine;
 public class BrittanyCircleEnemy : MonoBehaviour
 {
     // Start is called before the first frame update
+    public Rigidbody2D movement;
+    public float movementForce = 10;
+
     void Start()
     {
         
@@ -13,6 +16,7 @@ public class BrittanyCircleEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        movement.AddForce(movemetForce*Time.deltaTime,0,0);
         
     }
 }
