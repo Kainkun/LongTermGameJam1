@@ -16,7 +16,7 @@ public class BrittanyCircleEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.AddForce(movemetForce*Time.deltaTime,0,0);
+        movement.AddForce(new Vector3(movementForce*Time.deltaTime,0,0));
         
     }
 }
