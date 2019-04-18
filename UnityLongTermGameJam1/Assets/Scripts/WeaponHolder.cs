@@ -41,6 +41,7 @@ public class WeaponHolder : MonoBehaviour
             GameObject weaponObj = new GameObject();
             Weapon w = weaponObj.AddComponent<Weapon>();
             
+            
 
             weaponObj.transform.parent = shooter.transform;
             foreach(Transform t in weapon.shootPoints) {
