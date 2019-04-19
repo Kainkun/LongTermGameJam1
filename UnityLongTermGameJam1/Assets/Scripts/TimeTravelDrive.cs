@@ -17,7 +17,7 @@ public class TimeTravelDrive : MonoBehaviour
     {
         if (Input.GetKeyDown(activationKey))
         {
-          
+            FindObjectOfType<TimeTravelManager>().swapWorlds();
         }
     }
 }

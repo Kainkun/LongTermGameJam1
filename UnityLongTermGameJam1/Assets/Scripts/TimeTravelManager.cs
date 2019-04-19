@@ -18,4 +18,32 @@ public class TimeTravelManager : MonoBehaviour
     {
         
     }
+    public void swapWorlds()
+    {
+        if (currentWorld == 0)
+        {
+            foreach (GameObject a in cyberWorldObjects)
+            {
+                a.SetActive(true);
+            }
+            foreach (GameObject a in steamWorldObjects)
+            {
+                a.SetActive(false);
+            }
+            currentWorld = (world) 1;
+        }
+        else
+        {
+            foreach (GameObject a in cyberWorldObjects)
+            {
+                a.SetActive(false);
+            }
+            foreach (GameObject a in steamWorldObjects)
+            {
+                a.SetActive(true);
+            }
+            currentWorld = (world) 0;
+        }
+        
+    }
 }
