@@ -14,7 +14,7 @@ public class BoxEnemyIntenseEyebrows : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startPosition = transform.position;
+        startPosition = transform.position; // putting the position transform into startPosition vector
         goToPosition = transform.position;
     }
 
@@ -25,7 +25,7 @@ public class BoxEnemyIntenseEyebrows : MonoBehaviour
         goToPosition.y = startPosition.y + Mathf.Sin(Time.time * SinSpeed) * SinWidth; 
         // makes sprite wiggle up and down
 
-        //transform.position = goToPosition;
+        transform.position = goToPosition; // u need this
         
 
     }
