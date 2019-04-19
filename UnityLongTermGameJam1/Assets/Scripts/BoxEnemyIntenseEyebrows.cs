@@ -21,10 +21,11 @@ public class BoxEnemyIntenseEyebrows : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        goToPosition.x -= MoveSpeed * Time.deltaTime;
-        goToPosition.y = startPosition.y + Mathf.Sin(Time.time * SinSpeed) * SinWidth;
+        goToPosition.x -= MoveSpeed * Time.deltaTime; // Makes sprite move from right to left
+        goToPosition.y = startPosition.y + Mathf.Sin(Time.time * SinSpeed) * SinWidth; 
+        // makes sprite wiggle up and down
 
-        transform.position = goToPosition;
+        //transform.position = goToPosition;
         
 
     }

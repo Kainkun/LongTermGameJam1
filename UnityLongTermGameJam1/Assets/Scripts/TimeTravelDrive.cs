@@ -2,23 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BrittanyDash : MonoBehaviour
+public class TimeTravelDrive : MonoBehaviour
 {
+    public KeyCode activationKey;
+    public bool cyberRealm;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(activationKey))
         {
-            // print("Pressing key");
-            transform.position += new Vector3(-5, 0, 0); //X , Y , Z
+            FindObjectOfType<TimeTravelManager>().swapWorlds();
         }
-        
     }
-
 }
