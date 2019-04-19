@@ -4,7 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - sprite: {instanceID: 0}
+  - sprite: {fileID: 21300000, guid: d517c2a6bf09569469613430209b759f, type: 3}
   - bullet: {fileID: 4205412229897542554, guid: e8d4f0fb4f4378b4eb6d792beadb0ea7,
       type: 3}
   executionOrder: 0
