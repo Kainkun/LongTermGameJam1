@@ -5,7 +5,8 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - sprite: {instanceID: 0}
-  - bullet: {instanceID: 0}
+  - bullet: {fileID: 4205412229897542554, guid: e8d4f0fb4f4378b4eb6d792beadb0ea7,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

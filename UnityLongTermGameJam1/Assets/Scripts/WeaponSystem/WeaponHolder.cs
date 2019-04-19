@@ -6,7 +6,7 @@ public class WeaponHolder : MonoBehaviour
 {
     
     [SerializeField]
-    float lookupTag;
+    string lookupTag;
 
     [SerializeField]
     [Tooltip("Add the weapon onto this object!")]
@@ -29,24 +29,23 @@ public class WeaponHolder : MonoBehaviour
         }
     }
 
+
     //TODO :: do pickup check
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag.Equals(lookupTag)) {
+        if (collision.tag.ToLower().Equals(lookupTag.ToLower())) {
             WeaponShooter shooter = collision.GetComponent<WeaponShooter>();
             if (shooter == null){ //check children
                 shooter = collision.GetComponentInChildren<WeaponShooter>();
             }
 
-            GameObject weaponObj = new GameObject();
-            Weapon w = weaponObj.AddComponent<Weapon>();
-            
-            
+            GameObject weaponObj = Instantiate(this.transform.GetChild(0).gameObject, shooter.transform.position, Quaternion.identity, shooter.transform);
+            Weapon w = weaponObj.gameObject.GetComponent<Weapon>();
 
-            weaponObj.transform.parent = shooter.transform;
-            foreach(Transform t in weapon.shootPoints) {
-                t.parent = weaponObj.transform;
-            }
+            weaponObj.SetActive(false);
+            Destroy(this.gameObject);
+
+            shooter.weapons.Add(w);
         }
     }
 }
