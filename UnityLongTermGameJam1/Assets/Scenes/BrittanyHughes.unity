@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8854c35c4acda4c4ca8e5c2c16e8ea3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementForce: 10
 --- !u!23 &444753056
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -318,6 +319,8 @@ GameObject:
   - component: {fileID: 1724769780}
   - component: {fileID: 1724769779}
   - component: {fileID: 1724769778}
+  - component: {fileID: 1724769782}
+  - component: {fileID: 1724769783}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -397,3 +400,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1724769782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724769777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61d810725ea5b6f408817eaeb58fe260, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: {x: 0, y: 0, z: 0}
+  previous: {x: 0, y: 0, z: 0}
+  distance: 3
+--- !u!114 &1724769783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724769777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 901cd9e3a41e31d41a8e7b787dfc49aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainShipRenderer: {fileID: 0}
+  left: {fileID: 0}
+  right: {fileID: 0}
+  up: {fileID: 0}
+  down: {fileID: 0}
+  nothing: {fileID: 0}
+  moveSpeed: 0.1
