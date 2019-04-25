@@ -11,7 +11,7 @@ public class WeaponHolder : MonoBehaviour
     [SerializeField]
     [Tooltip("Add the weapon onto this object!")]
     Weapon weapon;
-
+    [SerializeField]
     Collider2D coll;
 
     private void Start()

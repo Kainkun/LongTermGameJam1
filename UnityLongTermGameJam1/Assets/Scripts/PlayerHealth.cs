@@ -41,4 +41,8 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     }
+    private void OnDestroy()
+    {
+        FindObjectOfType<levelManager>().resetLevel();
+    }
 }

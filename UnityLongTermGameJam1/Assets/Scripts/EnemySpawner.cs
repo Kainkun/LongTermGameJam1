@@ -83,6 +83,7 @@ public class EnemySpawner : MonoBehaviour{
 
                 if (maxSpawnCount >= 0){ //First we check the flag for spawnCount
                     if (currCount >= maxSpawnCount){ //This just makes sure that we don't exceed the max spawned
+
                         return;
                     }
                 }
@@ -125,6 +126,8 @@ public class EnemySpawner : MonoBehaviour{
             Debug.Log("Spawning Enemy at " + Time.timeSinceLevelLoad);
             currentSpawn = GameObject.Instantiate(enemyToSpawn, this.transform.position, Quaternion.identity, null);
             currCount++;
+            if (currCount == maxSpawnCount)
+                Destroy(gameObject);
         }
         yield return null;
     }
@@ -132,6 +135,8 @@ public class EnemySpawner : MonoBehaviour{
     IEnumerator spawn(GameObject go, float delay){
         currentSpawn = GameObject.Instantiate(go, this.transform.position, Quaternion.identity, null);
         currCount++;
+        if (currCount == maxSpawnCount)
+            Destroy(gameObject);
         currentSpawn.SetActive(false);
         yield return new WaitForSeconds(delay);
         currentSpawn.SetActive(true);
@@ -144,6 +149,8 @@ public class EnemySpawner : MonoBehaviour{
     IEnumerator spawn(GameObject go){
         currentSpawn = GameObject.Instantiate(go, this.transform.position, Quaternion.identity, null);
         currCount++;
+        if (currCount == maxSpawnCount)
+            Destroy(gameObject);
         readyToSpawn = false;
         yield return new WaitForSeconds(spawnTime);
         readyToSpawn = true;

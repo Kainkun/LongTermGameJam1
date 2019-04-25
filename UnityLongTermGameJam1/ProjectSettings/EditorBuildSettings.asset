@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Carter'sSampleLevel1.unity
+    guid: da91b4ae694579848b1d199d02056be2
+  - enabled: 1
+    path: Assets/Scenes/Carter'sSampleLevel2.unity
+    guid: ae4949e98f414fd42b195a2c252d79e0
   m_configObjects: {}
