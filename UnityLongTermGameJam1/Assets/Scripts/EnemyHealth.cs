@@ -32,6 +32,7 @@ public class EnemyHealth : MonoBehaviour
     void takeDamage()
     {
         health -= 1;
+        if(GetComponentInChildren<Slider>()!=null)
         GetComponentInChildren<Slider>().value = health; // reference to the slider
         if(health <= 0)
         {
