@@ -24,9 +24,9 @@ public class BrittanyParallaxBackground : MonoBehaviour
     {
         bounds = imageWidth / 100;
         transform.position += new Vector3(-speed * Time.deltaTime, 0);
-        if(transform.position.x < -bounds)
+        if(transform.position.x < -bounds )
         {
-            transform.position = new Vector3(bounds, 0, 0);
+            transform.position = new Vector3(1, 0, 0);
         }
     }
      
