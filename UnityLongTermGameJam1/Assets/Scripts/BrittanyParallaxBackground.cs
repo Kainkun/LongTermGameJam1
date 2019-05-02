@@ -9,7 +9,7 @@ public class BrittanyParallaxBackground : MonoBehaviour
      * @Date April 26, 2019
      * Parralax background scrolling
      * */
-    public float imageWidth;
+    public float imageWidth = 19.2f;
     public float speed;
 
     GameObject backgroundOne;
@@ -22,9 +22,9 @@ public class BrittanyParallaxBackground : MonoBehaviour
      void FixedUpdate()
     {
          transform.position += new Vector3(-speed * Time.deltaTime, 0);
-        if(transform.position.x < 10)
+        if(transform.position.x < -19.2)
         {
-            transform.position = new Vector3(10, 0, 0);
+            transform.position = new Vector3(imageWidth, 0, 0);
         }
     }
      
