@@ -22,7 +22,7 @@ public class BrittanyParallaxBackground : MonoBehaviour
      void FixedUpdate()
     {
          transform.position += new Vector3(-speed * Time.deltaTime, 0);
-        if(transform.position.x < -19.2)
+        if(transform.position.x < -imageWidth)
         {
             transform.position = new Vector3(imageWidth, 0, 0);
         }
