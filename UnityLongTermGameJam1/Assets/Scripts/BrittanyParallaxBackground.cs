@@ -11,7 +11,7 @@ public class BrittanyParallaxBackground : MonoBehaviour
      * */
     public float imageWidth;
     public float speed;
-    public float bounds;
+    
 
     GameObject backgroundOne;
     GameObject backgroundTwo;
