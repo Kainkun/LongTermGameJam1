@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame ()
     {
-        Debug.Log("Quit!");
+        // Debug.Log("Quit!"); // Testing to see if Quit button works
         Application.Quit();
     }
 
@@ -21,5 +21,8 @@ public class MainMenu : MonoBehaviour
     {
         // Debug.Log(volume); // Testing to see if volume slider works
     }
-
+    public void ViewCredits ()
+    {
+        SceneManager.LoadScene(5); // Build Settings show Credits Scene as 5
+    }
 }
