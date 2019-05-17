@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
 
     public void SetVolume (float volume)
     {
-        Debug.Log(volume);
+        // Debug.Log(volume); // Testing to see if volume slider works
     }
 
 }
