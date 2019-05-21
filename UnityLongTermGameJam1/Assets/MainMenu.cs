@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
 
     public void SetVolume (float newVolume)
     {
-        // Debug.Log(volume); // Testing to see if volume slider works
+        //Debug.Log(newVolume); // Testing to see if volume slider works
         AudioListener.volume = newVolume;
     }
     public void ViewCredits ()
