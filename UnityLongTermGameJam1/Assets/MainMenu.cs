@@ -17,9 +17,10 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    public void SetVolume (float volume)
+    public void SetVolume (float newVolume)
     {
         // Debug.Log(volume); // Testing to see if volume slider works
+        AudioListener.volume = newVolume;
     }
     public void ViewCredits ()
     {
