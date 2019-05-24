@@ -45,6 +45,11 @@ public abstract class Weapon : MonoBehaviour{
         timeUntilCanShoot = 1 / shootRate;
     }
 
+    public virtual void shoot() {
+        canShoot = false;
+        timeUntilCanShoot = 1 / shootRate;
+    }
+
     public void pickup(WeaponShooter shooter) {
         shooter.weapons.Add(this);
     }

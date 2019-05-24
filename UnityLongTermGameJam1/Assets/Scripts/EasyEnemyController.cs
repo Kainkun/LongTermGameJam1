@@ -32,7 +32,7 @@ public class EasyEnemyControllerEditor : Editor
 [ExecuteInEditMode]
 public class EasyEnemyController : MonoBehaviour
 {
-    public Transform[] path;
+    private List<Transform> path;
     public Vector3[] bakedPath;
     public float gizmoSize = .1f;
 
@@ -70,8 +70,7 @@ public class EasyEnemyController : MonoBehaviour
             return; //Done
 
         if(bakedPath[index].Equals(Vector3.positiveInfinity)){
-            //Fire Weapon here
-            Debug.Log("Firing Weapon!!");
+            weapon.shoot();
             index++;
         }
 
@@ -98,7 +97,7 @@ public class EasyEnemyController : MonoBehaviour
 
         int j = 0;
         if(!Application.isPlaying){
-            for(int i = 0; i < path.Length - 1; i++){
+            for(int i = 0; i < path.Count - 1; i++){
                 if(path[i].name.ToLower().Contains("fire"))
                     continue;
 
@@ -118,13 +117,20 @@ public class EasyEnemyController : MonoBehaviour
 
     //Editor Only Script
     public void UpdatePath(){
-        path = this.GetComponentsInChildren<Transform>();
+        path = new List<Transform>(this.GetComponentsInChildren<Transform>());
+        for(int i = 0; i < path.Count; i++){
+            if(path[i].name.ToLower().Contains("weapon")){
+                foreach(Transform t in path[i].GetComponentsInChildren<Transform>()){
+                    path.Remove(t);
+                }
+            }
+        }
     }
 
     public void BakePath(bool destroyChildren){
-        bakedPath = new Vector3[path.Length];
+        bakedPath = new Vector3[path.Count];
 
-        for(int i = 0; i < path.Length; i++){
+        for(int i = 0; i < path.Count; i++){
             if(path[i].name.ToLower().Contains("fire")){
                 Debug.Log("Adding to pos inif");
                 bakedPath[i] = Vector3.positiveInfinity;
@@ -135,7 +141,7 @@ public class EasyEnemyController : MonoBehaviour
         bakedPath[0] = Vector3.zero;
 
         if(destroyChildren){
-            for(int i = 1; i < path.Length; i++){
+            for(int i = 1; i < path.Count; i++){
                 DestroyImmediate(path[i].gameObject);
             }
             UpdatePath();
@@ -143,22 +149,27 @@ public class EasyEnemyController : MonoBehaviour
     }
 
     void OnDrawGizmosSelected(){
-        for(int i = 0; i < path.Length-1; i++){
+        for(int i = 0; i < path.Count-1; i++){
+            if(path[i].name.ToLower().Contains("fire"))
+                continue;
+            
             if(path[i+1].name.ToLower().Contains("fire")){
-                Gizmos.color = Color.magenta;
+                Gizmos.color = Color.red;
                 Gizmos.DrawSphere(path[i].position, gizmoSize);
                 continue;
             }
             
             if(path[i+1].name.ToLower().Contains("pos")){
-                Gizmos.color = Color.red;  
+                Gizmos.color = Color.blue;  
                 Gizmos.DrawSphere(path[i].position, gizmoSize);
             }
         }
 
-        if(path[path.Length - 1].name.ToLower().Contains("pos")){
-            Gizmos.color = Color.blue;  
-            Gizmos.DrawSphere(path[path.Length - 1].position, gizmoSize);
+        if(path.Count > 0){
+            if(path[path.Count - 1].name.ToLower().Contains("pos")){
+                Gizmos.color = Color.blue;
+                Gizmos.DrawSphere(path[path.Count - 1].position, gizmoSize);
+            }
         }
 
         //For Baked Position
@@ -175,10 +186,11 @@ public class EasyEnemyController : MonoBehaviour
             Gizmos.DrawSphere(offset + bakedPath[i], gizmoSize);
             
         }
-
-        if(!bakedPath[bakedPath.Length - 1].Equals(Vector3.positiveInfinity)){
-            Gizmos.color = Color.cyan;  
-            Gizmos.DrawSphere(offset + bakedPath[path.Length - 1], gizmoSize);
+        if(bakedPath.Length > 0){
+            if(!bakedPath[bakedPath.Length - 1].Equals(Vector3.positiveInfinity)){
+                Gizmos.color = Color.cyan;  
+                Gizmos.DrawSphere(offset + bakedPath[bakedPath.Length - 1], gizmoSize);
+            }
         }
     }
 }
