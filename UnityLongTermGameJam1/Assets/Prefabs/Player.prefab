@@ -160,11 +160,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainShipRenderer: {fileID: 6578194796865454894}
-  left: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  right: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  up: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  down: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  nothing: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  left: {fileID: 21300000, guid: 071850e3e24a9634f8d37d9b0c3aff2d, type: 3}
+  right: {fileID: 21300000, guid: 8eb571b4d4365ce4e9b0551c2f0bddcd, type: 3}
+  up: {fileID: 21300000, guid: 1da3a51a33228554fb9ab3c49f73ad63, type: 3}
+  down: {fileID: 21300000, guid: be734c14729e3fe45a77953bc38d5356, type: 3}
+  nothing: {fileID: 21300000, guid: 97b4421febb5e634e96ec1905c356135, type: 3}
   moveSpeed: 0.1
 --- !u!61 &1133769464058927167
 BoxCollider2D:
