@@ -45,7 +45,7 @@ public class WeaponHolder : MonoBehaviour
             weaponObj.SetActive(false);
             Destroy(this.gameObject);
 
-            shooter.weapons.Add(w);
+            shooter.Add(w);
         }
     }
 }

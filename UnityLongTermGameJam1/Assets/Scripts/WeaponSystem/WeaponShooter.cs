@@ -18,6 +18,7 @@ public class WeaponShooter : MonoBehaviour
     public List<Weapon> weapons;
 
     int currWeaponIndex = 0;
+    int maxWeapons = 5;
 
     void Update(){
         if (currWeapon == null){
@@ -48,5 +49,13 @@ public class WeaponShooter : MonoBehaviour
 
     int mod(int x, int m){ //Stolen from https://stackoverflow.com/questions/1082917/mod-of-negative-number-is-melting-my-brain/1082938
         return (x % m + m) % m;
+    }
+
+    public void Add(Weapon weapon){
+        if(weapons.Count >= maxWeapons){
+            //Replace current weapon
+            weapons[currWeaponIndex] = weapon;
+            currWeapon = weapons[currWeaponIndex];
+        }
     }
 }
