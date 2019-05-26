@@ -17,8 +17,8 @@ public class WeaponShooter : MonoBehaviour
     public Weapon currWeapon;
     public List<Weapon> weapons;
 
-    int currWeaponIndex = 0;
-    int maxWeapons = 5;
+    public int currWeaponIndex = 0;
+    public int maxWeapons = 5;
 
     void Update(){
         if (currWeapon == null){
@@ -53,9 +53,25 @@ public class WeaponShooter : MonoBehaviour
 
     public void Add(Weapon weapon){
         if(weapons.Count >= maxWeapons){
-            //Replace current weapon
-            weapons[currWeaponIndex] = weapon;
-            currWeapon = weapons[currWeaponIndex];
+            
+            List<WeaponHolder> holders = new List<WeaponHolder>(this.GetComponentsInChildren<WeaponHolder>(true));
+            Debug.Log(holders.Count);
+            WeaponHolder h = holders[currWeaponIndex];
+            h.pickupCooldown = 2;
+            Destroy(currWeapon.gameObject);
+            weapons.RemoveAt(currWeaponIndex);
+
+            h.transform.parent = null;
+            h.gameObject.SetActive(true);
         }
+
+        weapons.Add(weapon);
+        currWeaponIndex = weapons.IndexOf(weapon);
+        currWeapon = weapons[currWeaponIndex];
+            
+    }
+
+    int RandomSign (){
+        return Random.Range(-1, 0) < .5? 1 : -1;
     }
 }
