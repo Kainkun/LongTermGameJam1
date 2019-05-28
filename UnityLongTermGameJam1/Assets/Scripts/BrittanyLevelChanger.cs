@@ -7,6 +7,10 @@ public class BrittanyLevelChanger : MonoBehaviour
     private int levelToLoad;
 
     // Update is called once per frame
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
