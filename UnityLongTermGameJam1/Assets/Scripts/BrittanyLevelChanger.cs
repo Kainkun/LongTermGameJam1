@@ -2,7 +2,8 @@
 using UnityEngine.SceneManagement;
 
 public class BrittanyLevelChanger : MonoBehaviour
-{
+{  //Brittany Hughes
+
     public Animator animator;
     private int levelToLoad;
 
