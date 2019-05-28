@@ -14,12 +14,14 @@ public class BrittanyLevelChanger : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+       /* if (Input.GetKeyDown(KeyCode.Space))
         {
             // print("space key was pressed");
             FadeToNextLevel();
 
         }
+        */
+
     }
     public void FadeToNextLevel()
     {
