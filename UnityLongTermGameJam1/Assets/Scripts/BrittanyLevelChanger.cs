@@ -2,19 +2,26 @@
 using UnityEngine.SceneManagement;
 
 public class BrittanyLevelChanger : MonoBehaviour
-{
+{  //Brittany Hughes
+
     public Animator animator;
     private int levelToLoad;
 
     // Update is called once per frame
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+       /* if (Input.GetKeyDown(KeyCode.Space))
         {
             // print("space key was pressed");
             FadeToNextLevel();
 
         }
+        */
+
     }
     public void FadeToNextLevel()
     {
