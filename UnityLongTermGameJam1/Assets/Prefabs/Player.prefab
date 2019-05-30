@@ -98,7 +98,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 97b4421febb5e634e96ec1905c356135, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -122,10 +122,10 @@ GameObject:
   - component: {fileID: 1133769464058927167}
   - component: {fileID: 1943251785437680131}
   - component: {fileID: 1439367768300047712}
-  - component: {fileID: 7255733253256144987}
+  - component: {fileID: 181127340}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,7 +199,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6578194797747957951}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
---- !u!114 &7255733253256144987
+--- !u!114 &181127340
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -237,13 +237,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf2a32326ee55034d868ab5661ac3bd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootButton: 0
-  cycleWeaponUp: 0
-  cycleWeaponDown: 0
-  reloadButton: 0
+  shootButton: 32
+  cycleWeaponUp: 273
+  cycleWeaponDown: 274
+  reloadButton: 114
   currWeapon: {fileID: 0}
-  weapons:
-  - {fileID: 0}
+  weapons: []
   weaponPosition: {fileID: 2430237847868469016}
   currWeaponIndex: 0
-  maxWeapons: 5
+  maxWeapons: 1
