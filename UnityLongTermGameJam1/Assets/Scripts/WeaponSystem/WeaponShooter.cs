@@ -17,6 +17,8 @@ public class WeaponShooter : MonoBehaviour
     public Weapon currWeapon;
     public List<Weapon> weapons;
 
+    public Transform weaponPosition;
+
     public int currWeaponIndex = 0;
     public int maxWeapons = 5;
 
@@ -68,6 +70,8 @@ public class WeaponShooter : MonoBehaviour
         weapons.Add(weapon);
         currWeaponIndex = weapons.IndexOf(weapon);
         currWeapon = weapons[currWeaponIndex];
+        currWeapon.transform.parent = weaponPosition;
+        currWeapon.transform.localPosition = Vector3.zero;
             
     }
 

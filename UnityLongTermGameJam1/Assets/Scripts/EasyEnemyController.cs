@@ -3,41 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(EasyEnemyController))]
-public class EasyEnemyControllerEditor : Editor
-{
-    public override void OnInspectorGUI()
-    {
-        DrawDefaultInspector();
-
-        EasyEnemyController enemyController = (EasyEnemyController)target;
-        if(GUILayout.Button("Update Path"))
-        {
-            enemyController.UpdatePath();
-        }
-
-        if(GUILayout.Button("Bake Path"))
-        {
-            enemyController.BakePath(false);
-        }
-
-        if(GUILayout.Button("Bake Path (Destroy Children)"))
-        {
-            enemyController.BakePath(true);
-        }    
-    }
-}
-
 [RequireComponent(typeof(EnemyHealth))]
 [ExecuteInEditMode]
 public class EasyEnemyController : MonoBehaviour
 {
+    public struct Waypoint{
+        public enum Action{nothing, fire};
+
+        public Vector3 position;
+        public Action action;
+
+        public Waypoint(Vector3 position, Action action){
+            this.position = position;
+            this.action = action;
+        }
+    }
+
     private List<Transform> path;
-    public Vector3[] bakedPath;
+    public Waypoint[] bakedPath = new Waypoint[0];
     public float gizmoSize = .1f;
 
     public float speed = 5;
     public float rotateSpeed = 6;
+    public float distanceToPoints = 1f;
 
     public Weapon weapon;
 
@@ -45,11 +33,17 @@ public class EasyEnemyController : MonoBehaviour
     Vector3 offset;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if(Application.isPlaying)
             initPos = this.transform.position;
         UpdatePath();
+    }
+
+    void Start(){
+        if(Application.isPlaying){
+            BakePath(true);
+        }
     }
 
     // Update is called once per frame
@@ -60,31 +54,33 @@ public class EasyEnemyController : MonoBehaviour
             offset = initPos;
             FollowPath();
         }
-        DrawPath();
-
     }
 
     int index = 0;
+    bool alreadyShot = false;
     void FollowPath(){
         if(index >= bakedPath.Length)
             return; //Done
-
-        if(bakedPath[index].Equals(Vector3.positiveInfinity)){
-            weapon.shoot();
-            index++;
+        if(index != 0){
+            if(bakedPath[index-1].action == Waypoint.Action.fire && alreadyShot == false){
+                weapon.shoot();
+                alreadyShot = true;
+            }
         }
+        
 
-        Vector3 dir = ((initPos + bakedPath[index]) - this.transform.position);
+        Vector3 dir = ((initPos + bakedPath[index].position) - this.transform.position);
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
         
         Quaternion goal = Quaternion.Euler(0,0, angle);
 
         this.transform.rotation = Quaternion.Lerp(this.transform.rotation, goal, rotateSpeed * Time.deltaTime);
-        //this.transform.position = Vector3.Lerp(this.transform.position, initPos + bakedPath[index], speed * Time.deltaTime);
-        //this.transform.position += ((initPos + bakedPath[index]) - this.transform.position) * speed * Time.deltaTime;
+        //this.transform.position = Vector3.Lerp(this.transform.position, initPos + bakedPath[index].position, speed * Time.deltaTime);
+        //this.transform.position += ((initPos + bakedPath[index].position) - this.transform.position) * speed * Time.deltaTime;
         this.transform.position += this.transform.up * speed * Time.deltaTime;
-        if(Vector3.Distance(this.transform.position, initPos + bakedPath[index]) < 2f){
+        if(Vector3.Distance(this.transform.position, initPos + bakedPath[index].position) < distanceToPoints){
             index++;
+            alreadyShot = false;
         }
     }
 
@@ -95,23 +91,22 @@ public class EasyEnemyController : MonoBehaviour
         if(!Application.isEditor) //If we aren't the editor just ignore the function
             return;
 
-        int j = 0;
         if(!Application.isPlaying){
-            for(int i = 0; i < path.Count - 1; i++){
-                if(path[i].name.ToLower().Contains("fire"))
-                    continue;
+            if(path.Count <= 1)
+                return;
 
-                for(j = i+1; path[j].name.ToLower().Contains("fire"); j++){}
-                Debug.DrawLine(path[i].position, path[j].position, Color.yellow);
+            for(int i = 0; i < path.Count-1; i++){
+                Debug.DrawLine(path[i].position, path[i+1].position, Color.red);
             }
         }
-        
+    }
+
+    void DrawBakedPath(Vector3 offset){
+        if(!Application.isEditor) //If we aren't the editor just ignore the function
+            return;
+
         for(int i = 0; i < bakedPath.Length-1; i++){
-            if(bakedPath[i].Equals(Vector3.positiveInfinity)){
-                continue;
-            }
-            for(j = i+1; bakedPath[i].Equals(Vector3.positiveInfinity); j++){}
-            Debug.DrawLine(offset + bakedPath[i], offset + bakedPath[j], Color.cyan);
+            Debug.DrawLine(offset + bakedPath[i].position, offset + bakedPath[i+1].position, Color.cyan);
         }
     }
 
@@ -128,17 +123,15 @@ public class EasyEnemyController : MonoBehaviour
     }
 
     public void BakePath(bool destroyChildren){
-        bakedPath = new Vector3[path.Count];
+        bakedPath = new Waypoint[path.Count];
 
-        for(int i = 0; i < path.Count; i++){
+        for(int i = 1; i < path.Count; i++){
             if(path[i].name.ToLower().Contains("fire")){
-                Debug.Log("Adding to pos inif");
-                bakedPath[i] = Vector3.positiveInfinity;
+                bakedPath[i] = new Waypoint(path[i].localPosition, Waypoint.Action.fire);
                 continue;
             }
-            bakedPath[i] = path[i].localPosition;
+            bakedPath[i] = new Waypoint(path[i].localPosition, Waypoint.Action.nothing);
         }
-        bakedPath[0] = Vector3.zero;
 
         if(destroyChildren){
             for(int i = 1; i < path.Count; i++){
@@ -148,49 +141,29 @@ public class EasyEnemyController : MonoBehaviour
         }
     }
 
-    void OnDrawGizmosSelected(){
-        for(int i = 0; i < path.Count-1; i++){
-            if(path[i].name.ToLower().Contains("fire"))
-                continue;
-            
-            if(path[i+1].name.ToLower().Contains("fire")){
-                Gizmos.color = Color.red;
-                Gizmos.DrawSphere(path[i].position, gizmoSize);
-                continue;
-            }
-            
-            if(path[i+1].name.ToLower().Contains("pos")){
-                Gizmos.color = Color.blue;  
-                Gizmos.DrawSphere(path[i].position, gizmoSize);
-            }
+    void OnDrawGizmos(){
+        
+        if(!Application.isPlaying){
+            UpdatePath();
+            BakePath(false);
+            offset = this.transform.position;
         }
 
-        if(path.Count > 0){
-            if(path[path.Count - 1].name.ToLower().Contains("pos")){
-                Gizmos.color = Color.blue;
-                Gizmos.DrawSphere(path[path.Count - 1].position, gizmoSize);
-            }
-        }
-
-        //For Baked Position
-
-        for(int i = 0; i < bakedPath.Length-1; i++){
-            if(bakedPath[i+1].Equals(Vector3.positiveInfinity)){
+        DrawBakedPath(offset);
+        
+        for(int i = 0; i < bakedPath.Length; i++){
+            if(bakedPath[i].action == Waypoint.Action.fire){
                 Gizmos.color = Color.magenta;
-                Gizmos.DrawSphere(offset + bakedPath[i], gizmoSize);
+                Gizmos.DrawSphere(offset + bakedPath[i].position, gizmoSize);
                 continue;
             }
             
-            
-            Gizmos.color = Color.cyan;  
-            Gizmos.DrawSphere(offset + bakedPath[i], gizmoSize);
-            
-        }
-        if(bakedPath.Length > 0){
-            if(!bakedPath[bakedPath.Length - 1].Equals(Vector3.positiveInfinity)){
-                Gizmos.color = Color.cyan;  
-                Gizmos.DrawSphere(offset + bakedPath[bakedPath.Length - 1], gizmoSize);
+            if(bakedPath[i].action == Waypoint.Action.nothing){
+                Gizmos.color = Color.cyan;
+                Gizmos.DrawSphere(offset + bakedPath[i].position, gizmoSize);
+                continue;
             }
         }
+        
     }
 }
