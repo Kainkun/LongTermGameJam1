@@ -112,33 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &181127339 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6578194797747957951, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1289457458}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &181127340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 181127339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf2a32326ee55034d868ab5661ac3bd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shootButton: 32
-  cycleWeaponUp: 273
-  cycleWeaponDown: 274
-  reloadButton: 114
-  currWeapon: {fileID: 0}
-  weapons: []
-  weaponPosition: {fileID: 464123941}
-  currWeaponIndex: 0
-  maxWeapons: 1
 --- !u!1 &211349796
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,12 +282,6 @@ Transform:
   m_Father: {fileID: 211349798}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 5}
---- !u!4 &464123941 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2430237847868469016, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-    type: 3}
-  m_PrefabInstance: {fileID: 1289457458}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &490847944
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,11 +625,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6578194797747957951, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 6578194797747957949, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -718,39 +680,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1943251785437680131, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7255733253256144987, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: maxWeapons
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7255733253256144987, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: currWeapon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7255733253256144987, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: shootButton
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6578194796865454894, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 97b4421febb5e634e96ec1905c356135,
-        type: 3}
-    - target: {fileID: 7681201915153632211, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7255733253256144987, guid: 43ed9604ecbcef64a86cadd0bb85a7d5, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43ed9604ecbcef64a86cadd0bb85a7d5, type: 3}
 --- !u!1 &1650164806
 GameObject:
