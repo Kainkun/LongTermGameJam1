@@ -18,10 +18,10 @@ public class levelManager : MonoBehaviour
     }
     public void resetLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        FindObjectOfType<BrittanyLevelChanger>().FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void nextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        FindObjectOfType<BrittanyLevelChanger>().FadeToNextLevel();
     }
 }
