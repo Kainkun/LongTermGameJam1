@@ -275,6 +275,7 @@ GameObject:
   - component: {fileID: 3046049300539184645}
   - component: {fileID: 6676978962361931757}
   - component: {fileID: 3112393425782303230}
+  - component: {fileID: 859129025860361829}
   m_Layer: 0
   m_Name: BoxEnemyInstenseEyebrows
   m_TagString: Untagged
@@ -420,6 +421,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.71, y: 2.45}
   m_EdgeRadius: 0
+--- !u!114 &859129025860361829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6045133678627706762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 110de390045295a4abe16e90e4112e81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  invulnerabilityDuration: 2
 --- !u!1 &6850060423290492598
 GameObject:
   m_ObjectHideFlags: 0

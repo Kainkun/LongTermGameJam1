@@ -27,7 +27,7 @@ public class EnemyHealth : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         takeDamage();
-        Destroy(collision.gameObject);
+        //Destroy(collision.gameObject);
     }
     void takeDamage()
     {
