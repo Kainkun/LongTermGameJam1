@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  corpse: {fileID: 6578194797747957951, guid: 497c7876a6289764c8c0f7c5c5425e36, type: 3}
 --- !u!114 &181127340
 MonoBehaviour:
   m_ObjectHideFlags: 0

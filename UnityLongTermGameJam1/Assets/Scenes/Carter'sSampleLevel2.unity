@@ -718,6 +718,12 @@ PrefabInstance:
       propertyPath: currWeapon
       value: 
       objectReference: {fileID: 288193634}
+    - target: {fileID: 1439367768300047712, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
+        type: 3}
+      propertyPath: corpse
+      value: 
+      objectReference: {fileID: 6578194797747957951, guid: 497c7876a6289764c8c0f7c5c5425e36,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43ed9604ecbcef64a86cadd0bb85a7d5, type: 3}
 --- !u!4 &1799317584 stripped

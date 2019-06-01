@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public int health;
-   
+    public GameObject corpse;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void die()
     {
+        
         Destroy(gameObject);
     }
     private IEnumerator becomeInvincible(float duration)
@@ -43,6 +44,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void OnDestroy()
     {
-        FindObjectOfType<levelManager>().resetLevel();
+        Instantiate(corpse, transform.position, transform.rotation);
+        FindObjectOfType<levelManager>().beginResetLevel();
     }
 }

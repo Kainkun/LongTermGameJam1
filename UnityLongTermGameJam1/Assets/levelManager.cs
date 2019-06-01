@@ -16,8 +16,13 @@ public class levelManager : MonoBehaviour
         if (FindObjectsOfType<EnemySpawner>().Length == 0&&GameObject.FindGameObjectsWithTag("enemy").Length==0)
             nextLevel();
     }
-    public void resetLevel()
+    public void beginResetLevel()
     {
+        StartCoroutine(resetLevel());
+    }
+    public IEnumerator resetLevel()
+    {
+        yield return new WaitForSeconds(2);
         FindObjectOfType<BrittanyLevelChanger>().FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void nextLevel()
