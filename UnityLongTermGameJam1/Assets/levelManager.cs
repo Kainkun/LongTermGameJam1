@@ -23,7 +23,7 @@ public class levelManager : MonoBehaviour
     public IEnumerator resetLevel()
     {
         yield return new WaitForSeconds(2);
-        FindObjectOfType<BrittanyLevelChanger>().FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
+        FindObjectOfType<BrittanyLevelChanger>().FadeToLevel(SceneManager.GetActiveScene().buildIndex);
     }
     public void nextLevel()
     {

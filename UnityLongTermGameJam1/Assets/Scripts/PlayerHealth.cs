@@ -21,7 +21,8 @@ public class PlayerHealth : MonoBehaviour
     }
     private void die()
     {
-        
+        Instantiate(corpse, transform.position, transform.rotation);
+        FindObjectOfType<levelManager>().beginResetLevel();
         Destroy(gameObject);
     }
     private IEnumerator becomeInvincible(float duration)
@@ -41,10 +42,5 @@ public class PlayerHealth : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
-    }
-    private void OnDestroy()
-    {
-        Instantiate(corpse, transform.position, transform.rotation);
-        FindObjectOfType<levelManager>().beginResetLevel();
     }
 }
