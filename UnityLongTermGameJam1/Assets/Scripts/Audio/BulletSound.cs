@@ -22,6 +22,9 @@ public class BulletSound : MonoBehaviour
         {
             audioSource.PlayOneShot(CyberpunkGunshot, 0.5F);
         }
-        
+    }
+    public void playSound()
+    {
+        audioSource.PlayOneShot(CyberpunkGunshot);
     }
 }

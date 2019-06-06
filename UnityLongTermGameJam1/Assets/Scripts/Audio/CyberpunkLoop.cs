@@ -8,7 +8,7 @@ public class CyberpunkLoop : MonoBehaviour
     AudioSource cyberpunkMainTheme;
     public AudioClip CyberPunkMainTheme;
 
-    void Start()
+    public void Start()
     {
         cyberpunkMainTheme = GetComponent<AudioSource>();
         cyberpunkMainTheme.PlayDelayed(6.0f);
