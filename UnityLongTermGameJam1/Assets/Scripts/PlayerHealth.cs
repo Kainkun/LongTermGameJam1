@@ -43,4 +43,17 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        damagePlayer enemy = collision.gameObject.GetComponent<damagePlayer>();
+        if (enemy != null)
+        {
+            takeDamage(enemy.damage, enemy.invulnerabilityDuration);
+            if (enemy.damage < 0)
+            {
+                Destroy(collision.gameObject);
+            }
+        }
+    }
 }
