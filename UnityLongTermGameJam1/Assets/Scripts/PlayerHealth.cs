@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public int health;
     public GameObject corpse;
+    public SpriteRenderer playerSprite;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void takeDamage(int amount,float invulnAmount)
     {
-      
+        StartCoroutine(damageBlink());
         StartCoroutine(becomeInvincible(invulnAmount));
         health -= amount;
         if (health <= 0)
@@ -55,5 +56,16 @@ public class PlayerHealth : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
+    }
+
+    IEnumerator damageBlink()
+    {
+        playerSprite.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        playerSprite.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        playerSprite.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        playerSprite.color = Color.white;
     }
 }

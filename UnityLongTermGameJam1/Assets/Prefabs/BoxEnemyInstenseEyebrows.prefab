@@ -373,6 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  enemySprite: {fileID: 6045133678627706763}
 --- !u!61 &3112393425782303230
 BoxCollider2D:
   m_ObjectHideFlags: 0
