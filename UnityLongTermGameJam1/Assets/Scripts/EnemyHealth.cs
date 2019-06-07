@@ -26,10 +26,19 @@ public class EnemyHealth : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        print("x");
         if(collision.gameObject.tag == "PlayerBullet")
         takeDamage();
         //Destroy(collision.gameObject);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        print("y");
+        if (collision.gameObject.tag == "PlayerBullet")
+            takeDamage();
+    }
+
     void takeDamage()
     {
         health -= 1;
@@ -40,5 +49,6 @@ public class EnemyHealth : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 
 }
