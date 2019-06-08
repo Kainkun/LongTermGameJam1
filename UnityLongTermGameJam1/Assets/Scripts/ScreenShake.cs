@@ -13,7 +13,7 @@ public class ScreenShake : MonoBehaviour
     }
 
 
-    void shake(float duration, float intensity, float magnitude){
+    public void shake(float duration, float intensity, float magnitude){
         StartCoroutine(camShake(duration, intensity, magnitude));
     }
 

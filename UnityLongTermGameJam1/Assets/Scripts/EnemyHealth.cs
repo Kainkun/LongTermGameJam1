@@ -41,6 +41,7 @@ public class EnemyHealth : MonoBehaviour
 
     void takeDamage()
     {
+        ScreenShake.instance.shake(0.2f,50,0.5f);
         StartCoroutine(damageBlink());
         health -= 1;
         if(GetComponentInChildren<Slider>()!=null)
