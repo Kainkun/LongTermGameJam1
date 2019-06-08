@@ -5,26 +5,27 @@ using UnityEngine;
 
 public class BulletSound : MonoBehaviour
 {
-    AudioSource cybepunkBullets;
-
+    AudioSource bulletSounds;
     public AudioClip CyberpunkGunshot;
-    AudioSource audioSource;
+
+    public float pitchMin, pitchMax;
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        bulletSounds = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            audioSource.PlayOneShot(CyberpunkGunshot, 0.5F);
+            bulletSounds.PlayOneShot(CyberpunkGunshot, 0.3F);
+            bulletSounds.pitch = Random.Range(pitchMin, pitchMax);
         }
     }
     public void playSound()
     {
-        audioSource.PlayOneShot(CyberpunkGunshot);
+        bulletSounds.PlayOneShot(CyberpunkGunshot);
     }
 }

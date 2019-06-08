@@ -693,11 +693,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243043684533222800, guid: bddba61bce4ce934396fa26ee42ecf4a,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 4d1ffc7ec8596b94f95b5a361b45ba95, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 83991aea626d56248972c23c317f2525, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -791,7 +791,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b52e1cf5f33d974587b4be2e24928c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CyberpunkGunshot: {fileID: 8300000, guid: 4d1ffc7ec8596b94f95b5a361b45ba95, type: 3}
+  CyberpunkGunshot: {fileID: 8300000, guid: 83991aea626d56248972c23c317f2525, type: 3}
+  pitchMin: 0.9
+  pitchMax: 1.1
 --- !u!1 &959780392
 GameObject:
   m_ObjectHideFlags: 0

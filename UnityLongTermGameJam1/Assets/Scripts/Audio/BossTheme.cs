@@ -6,23 +6,22 @@ public class BossTheme : MonoBehaviour
 {
 
     AudioSource bossThemeVer;
-    public AudioClip[] audioSourcesArray;
-    public AudioClip BossThemeVer1;
-    public AudioClip BossThemeVer2;
+    public AudioClip[] audioClipsArray;
+    private int clipIndex;
 
     void Start()
     {
-        StartCoroutine(WaitAndExecute());
         bossThemeVer = GetComponent<AudioSource>();
+        StartCoroutine(WaitAndExecute());
     }
 
     IEnumerator WaitAndExecute()
     {
         yield return new WaitForSecondsRealtime(5.647f); //sound triggers after about 6 seconds
-        bossThemeVer.clip = audioSourcesArray[Random.Range(0, audioSourcesArray.Length)];
-        bossThemeVer.Play();
+        
+       bossThemeVer.clip = audioClipsArray[Random.Range(0, audioClipsArray.Length)];
+       bossThemeVer.Play();
     }
-
     // Update is called once per frame
     void Update()
     {
