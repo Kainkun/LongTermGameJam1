@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class EnemyHealth : MonoBehaviour
 {
     public int health;
+    public SpriteRenderer enemySprite;
+
     void speak()
 
     {
@@ -30,8 +32,17 @@ public class EnemyHealth : MonoBehaviour
         takeDamage();
         //Destroy(collision.gameObject);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "PlayerBullet")
+            takeDamage();
+    }
+
     void takeDamage()
     {
+        ScreenShake.instance.shake(0.2f,50,0.5f);
+        StartCoroutine(damageBlink());
         health -= 1;
         if(GetComponentInChildren<Slider>()!=null)
         GetComponentInChildren<Slider>().value = health; // reference to the slider
@@ -39,6 +50,17 @@ public class EnemyHealth : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator damageBlink()
+    {
+        enemySprite.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        enemySprite.color = Color.white;
+        yield return new WaitForSeconds(0.1f);
+        enemySprite.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        enemySprite.color = Color.white;
     }
 
 }
