@@ -5,7 +5,7 @@ using UnityEngine;
 public class ScreenShake : MonoBehaviour
 {
     Camera cam;
-    static ScreenShake instance;
+    public static ScreenShake instance;
     // Start is called before the first frame update
     void Start(){
         cam = this.GetComponent<Camera>();
