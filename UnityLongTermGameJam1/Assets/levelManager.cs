@@ -13,8 +13,8 @@ public class levelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (FindObjectsOfType<EnemySpawner>().Length == 0&&GameObject.FindGameObjectsWithTag("enemy").Length==0)
-            nextLevel();
+        //if (FindObjectsOfType<EnemySpawner>().Length == 0&&GameObject.FindGameObjectsWithTag("enemy").Length==0)
+         //   nextLevel();
     }
     public void beginResetLevel()
     {

@@ -10,12 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 825888340402301736}
   - component: {fileID: 4490698741459540589}
-  - component: {fileID: 6276228351056583694}
   - component: {fileID: 4258329400758619063}
   - component: {fileID: 4466103930802133841}
+  - component: {fileID: 1969317911015531128}
+  - component: {fileID: 8442037579050755269}
   m_Layer: 0
-  m_Name: DefaultBullet
-  m_TagString: PlayerBullet
+  m_Name: EnemyBullet
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8113208, g: 0.10332859, b: 0.10332859, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -82,21 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6276228351056583694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4205412229897542554}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f1df56fc1349dc44ad8be9e3f5e0af5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0, z: 0}
-  speed: 0
-  lifeTime: 20
 --- !u!58 &4258329400758619063
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -134,3 +120,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1969317911015531128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4205412229897542554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 110de390045295a4abe16e90e4112e81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  invulnerabilityDuration: 1
+--- !u!114 &8442037579050755269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4205412229897542554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f1df56fc1349dc44ad8be9e3f5e0af5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 0, y: 0, z: 0}
+  speed: 0
+  lifeTime: 20

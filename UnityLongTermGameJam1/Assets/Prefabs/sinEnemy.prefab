@@ -413,7 +413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  invulnerabilityDuration: 2
+  invulnerabilityDuration: 1
 --- !u!1 &6850060423290492598
 GameObject:
   m_ObjectHideFlags: 0
