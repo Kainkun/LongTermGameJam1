@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class levelManager : MonoBehaviour
 {
+    public bool SkipLevel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,12 @@ public class levelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(SkipLevel)
+        {
+            SkipLevel = false;
+            nextLevel();
+        }
+
         //if (FindObjectsOfType<EnemySpawner>().Length == 0&&GameObject.FindGameObjectsWithTag("enemy").Length==0)
          //   nextLevel();
     }
