@@ -20,11 +20,11 @@ public class BossTheme : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(5.647f); //sound triggers after about 6 seconds
 
-        for (clipIndex = 0; clipIndex < audioClipsArray.Length; clipIndex--)
+        while (true)
         {
             bossThemeVer.clip = audioClipsArray[Random.Range(0, audioClipsArray.Length)];
             bossThemeVer.Play();
-            yield return new WaitForSecondsRealtime(22.588f); //sound loops after about 22 seconds
+            yield return new WaitForSecondsRealtime(22.588f); //sound loops after about 23 seconds
             bossThemeVer.clip = audioClipsArray[Random.Range(0, audioClipsArray.Length)];
             bossThemeVer.Play();
         }
