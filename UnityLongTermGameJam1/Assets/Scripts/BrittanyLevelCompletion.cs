@@ -18,14 +18,16 @@ public class BrittanyLevelCompletion : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
+        percent = (time / LevelLength)*100;
         //if time is greater than levelLength the level should be over
         if (time > LevelLength)
         {
             print("The level is over");
             // the level is over
         }
-       percent = time / LevelLength;
-       GetComponent<Text>().text = percent.ToString();
-
+        percent = Mathf.Floor(percent);
+        GetComponent<Text>().text = percent.ToString() + "%";
+       
+     
     }
 }
