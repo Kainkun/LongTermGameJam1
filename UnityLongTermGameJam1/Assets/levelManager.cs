@@ -35,6 +35,9 @@ public class levelManager : MonoBehaviour
     }
     public void nextLevel()
     {
+        if(GetComponent<PlayerDimensionHop>() != null)
+        GetComponent<PlayerDimensionHop>().HopOut();
+        else
         FindObjectOfType<BrittanyLevelChanger>().FadeToNextLevel();
     }
 }
