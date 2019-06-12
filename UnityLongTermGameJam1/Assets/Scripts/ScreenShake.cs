@@ -10,6 +10,7 @@ public class ScreenShake : MonoBehaviour
     void Start(){
         cam = this.GetComponent<Camera>();
         instance = this;
+        initpos = this.transform.position;
     }
 
 
@@ -17,8 +18,13 @@ public class ScreenShake : MonoBehaviour
         StartCoroutine(camShake(duration, intensity, magnitude));
     }
 
+    bool currShaking = false;
+    Vector3 initpos;
     IEnumerator camShake(float duration, float intensity, float magnitude){
-        Vector3 initpos = this.transform.localPosition;
+        if(!currShaking)
+            initpos = this.transform.localPosition;
+
+        currShaking = true;
 
         float randX = Random.Range(0, 100);
         float randY = Random.Range(0, 100);
@@ -34,6 +40,7 @@ public class ScreenShake : MonoBehaviour
 
         this.transform.localPosition = initpos;
 
+        currShaking = false;
         yield return null;
     }
 }
