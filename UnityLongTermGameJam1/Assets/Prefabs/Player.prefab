@@ -4822,7 +4822,6 @@ GameObject:
   - component: {fileID: 1943251785437680131}
   - component: {fileID: 1439367768300047712}
   - component: {fileID: 181127340}
-  - component: {fileID: 1211078450}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4948,17 +4947,3 @@ MonoBehaviour:
   weaponPosition: {fileID: 2430237847868469016}
   currWeaponIndex: 0
   maxWeapons: 1
---- !u!114 &1211078450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6578194797747957951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6a547f8899a8d841a803335848b4b90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activationKey: 32
-  cyberRealm: 1

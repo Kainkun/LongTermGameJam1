@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class levelManager : MonoBehaviour
 {
+    public bool SkipLevel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,8 +15,14 @@ public class levelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (FindObjectsOfType<EnemySpawner>().Length == 0&&GameObject.FindGameObjectsWithTag("enemy").Length==0)
+        if(SkipLevel)
+        {
+            SkipLevel = false;
             nextLevel();
+        }
+
+        //if (FindObjectsOfType<EnemySpawner>().Length == 0&&GameObject.FindGameObjectsWithTag("enemy").Length==0)
+         //   nextLevel();
     }
     public void beginResetLevel()
     {
@@ -27,6 +35,9 @@ public class levelManager : MonoBehaviour
     }
     public void nextLevel()
     {
+        if(GetComponent<PlayerDimensionHop>() != null)
+        GetComponent<PlayerDimensionHop>().HopOut();
+        else
         FindObjectOfType<BrittanyLevelChanger>().FadeToNextLevel();
     }
 }

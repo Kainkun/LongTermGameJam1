@@ -75,7 +75,13 @@ public class HomingEnemy : MonoBehaviour
     //return normalized vector2 position of player
     Vector2 getAttackDirection()
     {
-        Vector3 temp = Player.transform.position - transform.position;
+        Vector3 temp;
+
+        if (Player != null)
+            temp = Player.transform.position - transform.position;
+        else
+            temp = new Vector3(-1, 0, 0);
+
         temp.z = 0;
         temp.Normalize();
         return temp;
@@ -84,7 +90,13 @@ public class HomingEnemy : MonoBehaviour
     //return quaterion of direction of player
     Quaternion getLookAt()
     {
-        Vector3 diff = Player.transform.position - transform.position;
+        Vector3 diff;
+
+        if (Player != null)
+            diff = Player.transform.position - transform.position;
+        else
+            diff = new Vector3(-1, 0, 0);
+
         diff.Normalize();
 
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;

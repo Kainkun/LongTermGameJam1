@@ -46,9 +46,9 @@ public class EnemySpawner : MonoBehaviour{
 
 
     [SerializeField]
-    [Header("Time in seconds to spawn")]
-    [Tooltip("Specific times in which an enemy will spawn (in seconds)")]
-    private float[] spawnTimes;
+    [Header("(x, y, time) positional offset to swan, Time in seconds to spawn")]
+    [Tooltip("(x, y, seconds)")]
+    private Vector3[] spawnTimes;
 
 
     private Renderer render;
@@ -118,12 +118,12 @@ public class EnemySpawner : MonoBehaviour{
     }
 
     bool alreadyRan = false;
-    IEnumerator timedSpawn(GameObject go, float[] times) {
+    IEnumerator timedSpawn(GameObject go, Vector3[] times) {
         alreadyRan = true;
         for (int i = 0; i < spawnTimes.Length; i++){
-            yield return new WaitForSeconds(spawnTimes[i] - Time.timeSinceLevelLoad);
+            yield return new WaitForSeconds(spawnTimes[i].z - Time.timeSinceLevelLoad);
             Debug.Log("Spawning Enemy at " + Time.timeSinceLevelLoad);
-            currentSpawn = GameObject.Instantiate(enemyToSpawn, this.transform.position, Quaternion.identity, null);
+            currentSpawn = GameObject.Instantiate(enemyToSpawn, this.transform.position + new Vector3(times[i].x, times[i].y, 0), Quaternion.identity, null);
             currCount++;
         }
         yield return null;

@@ -7,10 +7,13 @@ public class BrittanyLevelChanger : MonoBehaviour
     public Animator animator;
     private int levelToLoad;
 
+    public GameObject canvas;
+
     // Update is called once per frame
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
+        canvas.SetActive(true);
     }
     void Update()
     {
