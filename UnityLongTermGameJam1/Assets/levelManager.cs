@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 public class levelManager : MonoBehaviour
 {
     public bool SkipLevel;
+    public static levelManager instance;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        instance = this;
     }
 
     // Update is called once per frame
