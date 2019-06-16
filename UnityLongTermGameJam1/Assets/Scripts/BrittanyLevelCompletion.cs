@@ -7,12 +7,16 @@ public class BrittanyLevelCompletion : MonoBehaviour
 {
     public float time;
     public float LevelLength;
-    private float percent;
+    public float percent;
     public Image loadingBar;
 
-    bool levelOver;
+    public bool levelOver;
+
+    public static BrittanyLevelCompletion Script;
+
     void Start()
     {
+        Script = this;
         print("Starting");
     }
 
