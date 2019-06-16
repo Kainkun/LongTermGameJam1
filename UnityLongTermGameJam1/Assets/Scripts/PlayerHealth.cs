@@ -7,10 +7,11 @@ public class PlayerHealth : MonoBehaviour
     public int health;
     public GameObject corpse;
     public SpriteRenderer playerSprite;
+    public static PlayerHealth instance;
     // Start is called before the first frame update
     void Start()
     {
-        
+        instance = this;
     }
     private void takeDamage(int amount,float invulnAmount)
     {

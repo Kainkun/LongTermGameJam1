@@ -19,7 +19,7 @@ public class BrittanyLevelCompletion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(time < LevelLength)
+        if (time < LevelLength && GameObject.FindGameObjectWithTag("Player"))
         time += Time.deltaTime;
         percent = (time / LevelLength)*100;
 
