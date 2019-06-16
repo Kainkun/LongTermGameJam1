@@ -6,6 +6,8 @@ public class PlayerDimensionHop : MonoBehaviour
 {
     GameObject player;
     GameObject spriteObj;
+    GameObject gunSpriteObj;
+    GameObject gunObj;
 
     public bool hopIn;
     public bool hopOut;
@@ -16,14 +18,19 @@ public class PlayerDimensionHop : MonoBehaviour
 
     void Start()
     {
+        
+
         player = GameObject.FindGameObjectWithTag("Player");
         spriteObj = player.transform.GetChild(0).gameObject;
-
+        gunObj = player.transform.GetChild(1).gameObject;
+        gunSpriteObj = player.transform.GetChild(1).GetChild(0).gameObject;
         HopIn();
     }
 
     void Update()
     {
+        
+
         if (player != null)
         {
             if (hopIn)
@@ -71,6 +78,8 @@ public class PlayerDimensionHop : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         spriteObj.SetActive(true);
+        gunObj.SetActive(true);
+        gunSpriteObj.GetComponent<SpriteRenderer>().color += new Color(0, 0, 0, 1);
 
         traveling = true;
         StartCoroutine(BlinkingWhileTravel());
@@ -98,6 +107,8 @@ public class PlayerDimensionHop : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         spriteObj.SetActive(false);
+        gunObj.SetActive(false);
+        gunSpriteObj.GetComponent<SpriteRenderer>().color -= new Color(0, 0, 0, 1);
         traveling = false;
 
 
@@ -109,8 +120,10 @@ public class PlayerDimensionHop : MonoBehaviour
         while(traveling)
         {
             spriteObj.GetComponent<SpriteRenderer>().color = Color.blue;
+            gunSpriteObj.GetComponent<SpriteRenderer>().color = Color.blue;
             yield return new WaitForSeconds(0.1f);
             spriteObj.GetComponent<SpriteRenderer>().color = Color.white;
+            gunSpriteObj.GetComponent<SpriteRenderer>().color = Color.white;
             yield return new WaitForSeconds(0.1f);
         }
     }
