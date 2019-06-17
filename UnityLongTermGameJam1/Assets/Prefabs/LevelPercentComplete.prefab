@@ -94,6 +94,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 0
   LevelLength: 10
+  percent: 0
+  loadingBar: {fileID: 0}
+  levelOver: 0
 --- !u!1 &1064363603251491045
 GameObject:
   m_ObjectHideFlags: 0
