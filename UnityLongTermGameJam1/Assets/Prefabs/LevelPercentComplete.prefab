@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0
-  LevelLength: 10
+  LevelLength: 120
   percent: 0
   loadingBar: {fileID: 0}
   levelOver: 0

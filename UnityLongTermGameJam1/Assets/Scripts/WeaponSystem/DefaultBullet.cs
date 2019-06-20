@@ -10,6 +10,7 @@ public class DefaultBullet : MonoBehaviour{
     public float lifeTime = 20; //Seconds
 
     void Start(){
+        transform.parent = GameObject.FindGameObjectWithTag("BulletsContainer").transform;
         StartCoroutine(killMeAt(lifeTime));
     }
 

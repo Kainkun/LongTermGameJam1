@@ -57,7 +57,7 @@ public class WeaponShooter : MonoBehaviour
         if(weapons.Count >= maxWeapons){
             
             List<WeaponHolder> holders = new List<WeaponHolder>(this.GetComponentsInChildren<WeaponHolder>(true));
-            Debug.Log(holders.Count);
+            //Debug.Log(holders.Count);
             WeaponHolder h = holders[currWeaponIndex];
             h.pickupCooldown = 2;
             Destroy(currWeapon.gameObject);

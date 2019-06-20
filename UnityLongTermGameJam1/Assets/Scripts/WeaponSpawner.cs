@@ -61,7 +61,19 @@ public class WeaponSpawner : MonoBehaviour
     public void SpawnRandomWeapon()
     {
         if (WeaponPickups.Length > 0)
-            SpawnWeapon(Random.Range(0, WeaponPickups.Length));
+        {
+            int WeaponNum = Random.Range(0, WeaponPickups.Length);
+
+            if (GameObject.FindGameObjectWithTag("Player").transform.GetChild(2).name == WeaponPickups[WeaponNum].name + "(Clone)")
+            {
+                if (WeaponNum == WeaponPickups.Length - 1)
+                    WeaponNum = 0;
+                else
+                    WeaponNum++;
+            }
+
+            SpawnWeapon(WeaponNum);
+        }
         else
             Debug.LogError("No Weapons in WeaponPickups");
     }

@@ -26,7 +26,8 @@ public class BoxEnemyIntenseEyebrows : MonoBehaviour
         // makes sprite wiggle up and down
 
         transform.position = goToPosition; // u need this
-        
 
+        if (transform.position.x < -15)
+            Destroy(gameObject);
     }
 }
