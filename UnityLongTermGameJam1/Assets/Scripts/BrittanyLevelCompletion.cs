@@ -17,7 +17,7 @@ public class BrittanyLevelCompletion : MonoBehaviour
     void Start()
     {
         Script = this;
-        print("Starting");
+        //print("Starting");
     }
 
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class BrittanyLevelCompletion : MonoBehaviour
             {
                 levelOver = true;
                 levelManager.instance.nextLevel();
-                print("The level is over");
+                //print("The level is over");
                 // the level is over
             }
         }

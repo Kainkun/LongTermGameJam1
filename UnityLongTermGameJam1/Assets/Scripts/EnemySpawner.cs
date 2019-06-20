@@ -122,7 +122,7 @@ public class EnemySpawner : MonoBehaviour{
         alreadyRan = true;
         for (int i = 0; i < spawnTimes.Length; i++){
             yield return new WaitForSeconds(spawnTimes[i].z - Time.timeSinceLevelLoad);
-            Debug.Log("Spawning Enemy at " + Time.timeSinceLevelLoad);
+            //Debug.Log("Spawning Enemy at " + Time.timeSinceLevelLoad);
             currentSpawn = GameObject.Instantiate(enemyToSpawn, this.transform.position + new Vector3(times[i].x, times[i].y, 0), Quaternion.identity, null);
             currCount++;
         }
