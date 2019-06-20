@@ -29,6 +29,12 @@ public class EasyEnemyController : MonoBehaviour
 
     public Weapon weapon;
 
+    //Kains addition
+    [Tooltip("When path is completed, if this is unchecked this enemy will die, if it is checked it will hold its position and shoot at an interval")]
+    public bool HoldPositionAtEnd;
+    public float ShootInterval;
+    float ShootIntervalTime;
+
     private Vector3 initPos = Vector3.zero;
     Vector3 offset;
 
@@ -53,6 +59,22 @@ public class EasyEnemyController : MonoBehaviour
          if(Application.isPlaying){
             offset = initPos;
             FollowPath();
+        }
+
+        //kain addition
+        if (index >= bakedPath.Length)
+        {
+            ShootIntervalTime += Time.deltaTime;
+            if (HoldPositionAtEnd)
+            {
+                if (ShootIntervalTime > ShootInterval)
+                {
+                    weapon.shoot();
+                    ShootIntervalTime = 0;
+                }
+            }
+            else
+                Destroy(gameObject);
         }
     }
 
@@ -82,6 +104,8 @@ public class EasyEnemyController : MonoBehaviour
             index++;
             alreadyShot = false;
         }
+
+        
     }
 
 

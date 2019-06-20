@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 3930129807609952473}
   - component: {fileID: 8906257614773060583}
   m_Layer: 0
-  m_Name: LoopAroundEnemy
+  m_Name: BasePathSpreadEnemy
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -169,6 +169,9 @@ MonoBehaviour:
   rotateSpeed: 4
   distanceToPoints: 1
   weapon: {fileID: 1741967445998644332}
+  HoldPositionAtEnd: 0
+  ShootInterval: 2
+  ShootIntervalTime: 0.1
 --- !u!114 &1741967445367141524
 MonoBehaviour:
   m_ObjectHideFlags: 0
