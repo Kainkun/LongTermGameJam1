@@ -5033,7 +5033,7 @@ MonoBehaviour:
   up: {fileID: 21300000, guid: 1da3a51a33228554fb9ab3c49f73ad63, type: 3}
   down: {fileID: 21300000, guid: be734c14729e3fe45a77953bc38d5356, type: 3}
   nothing: {fileID: 21300000, guid: 97b4421febb5e634e96ec1905c356135, type: 3}
-  moveSpeed: 0.12
+  moveSpeed: 0.15
   wallX: 9
   wallY: 5
 --- !u!61 &1133769464058927167

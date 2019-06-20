@@ -16,5 +16,7 @@ public class WeaponPickupMovement : MonoBehaviour
     void Update()
     {
         transform.position += v3 * Time.deltaTime;
+        if (transform.position.x < -15)
+            Destroy(gameObject);
     }
 }

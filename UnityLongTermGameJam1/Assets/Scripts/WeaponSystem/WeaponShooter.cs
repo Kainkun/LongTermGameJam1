@@ -63,8 +63,9 @@ public class WeaponShooter : MonoBehaviour
             Destroy(currWeapon.gameObject);
             weapons.RemoveAt(currWeaponIndex);
 
-            h.transform.parent = null;
-            h.gameObject.SetActive(true);
+            Destroy(h.gameObject);
+            //h.transform.parent = null;
+            //h.gameObject.SetActive(true);
         }
 
         weapons.Add(weapon);

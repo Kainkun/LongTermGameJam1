@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1025992067065350227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1025992067065350225}
+  - component: {fileID: 1025992067065350224}
+  m_Layer: 0
+  m_Name: Weapon Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1025992067065350225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025992067065350227}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1025992067065350224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025992067065350227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94f93f229afebc543a556854b0fc5631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnStartTime: 10
+  SpawnInterval: 10
+  IntervalVariance: 3
+  SpawnHeightVariance: 4
+  WeaponPickups:
+  - {fileID: 8760303839567043588, guid: 4b9c6cf9e5ba3f34497b9f0e02a9b13f, type: 3}
+  - {fileID: 8760303839567043588, guid: 31bc9ec0aa1cbcf44ae628ce9ca2b08f, type: 3}
+  - {fileID: 8760303839567043588, guid: f5e04f93e0ec1764ba9f58ba6a16ee41, type: 3}
+  - {fileID: 8760303839567043588, guid: f775459c6fc595a46a7e77f4d5416345, type: 3}
+  - {fileID: 8760303839567043588, guid: 4c1efc59aa0745f4d9b6aed4579e08bf, type: 3}
+  - {fileID: 8760303839567043588, guid: 12ddbe665a7ef274baac256b4cd8cfd0, type: 3}
