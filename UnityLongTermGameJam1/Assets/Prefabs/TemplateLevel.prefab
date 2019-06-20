@@ -404,7 +404,7 @@ GameObject:
   - component: {fileID: 9005503578473221076}
   m_Layer: 0
   m_Name: BulletsContainer
-  m_TagString: Untagged
+  m_TagString: BulletsContainer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
