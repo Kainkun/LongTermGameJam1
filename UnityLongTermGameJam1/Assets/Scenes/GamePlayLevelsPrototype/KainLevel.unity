@@ -1428,6 +1428,36 @@ PrefabInstance:
     - target: {fileID: 7507447803806542470, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
       propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343561495163842765, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833585775046432844, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7409951340917886227, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8443341275947010271, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343561497086378845, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420164571425462854, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: shootRate
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

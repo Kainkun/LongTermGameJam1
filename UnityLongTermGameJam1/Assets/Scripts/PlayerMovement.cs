@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     public Sprite down;
     public Sprite nothing;
     public float moveSpeed;
+
+    public float wallX;
+    public float wallY;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +32,27 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 dir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         dir = dir.normalized;
+
+        if(transform.position.x > wallX && dir.x > 0)
+        {
+            dir.x = 0;
+        }
+
+        else if (transform.position.x < -wallX && dir.x < 0)
+        {
+            dir.x = 0;
+        }
+
+        else if (transform.position.y > wallY && dir.y > 0)
+        {
+            dir.y = 0;
+        }
+
+        else if (transform.position.y < -wallY && dir.y < 0)
+        {
+            dir.y = 0;
+        }
+
         transform.Translate(dir * moveSpeed);
         if (dir.x < 0)
             mainShipRenderer.sprite = left;
