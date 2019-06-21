@@ -18,6 +18,9 @@ public class MenuThemes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            menuTheme.Stop();
+        }
     }
 }

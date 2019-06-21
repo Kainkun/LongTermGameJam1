@@ -706,7 +706,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1440,15 +1440,15 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4134933351138529326, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: m_Name
-      value: WeaponPickupDefault(Clone)
-      objectReference: {fileID: 0}
     - target: {fileID: 2770411573759507411, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
       propertyPath: m_TagString
       value: BulletsContainer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134933351138529326, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_Name
+      value: WeaponPickupDefault(Clone)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 415ded2dfc609b44685ac79a31ccfbc1, type: 3}
@@ -1672,6 +1672,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b433b774b88144ca808f9f7d3cd93f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  introSteamPunk: {fileID: 0}
+  playerDamage: {fileID: 0}
 --- !u!1 &2047800017
 GameObject:
   m_ObjectHideFlags: 0

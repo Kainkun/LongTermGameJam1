@@ -8,6 +8,9 @@ public class PlayerHealth : MonoBehaviour
     public GameObject corpse;
     public SpriteRenderer playerSprite;
     public static PlayerHealth instance;
+
+    public AudioClip playerDamage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +55,7 @@ public class PlayerHealth : MonoBehaviour
         damagePlayer enemy = collision.gameObject.GetComponent<damagePlayer>();
         if (enemy != null)
         {
+            GetComponent<AudioSource>().PlayOneShot(playerDamage);
             takeDamage(enemy.damage, enemy.invulnerabilityDuration);
             if (enemy.damage < 0)
             {

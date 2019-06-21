@@ -16,6 +16,6 @@ public class PlayerShooting : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
-            Instantiate(bullet, muzzel.position, transform.rotation);
+            Instantiate(bullet, muzzel.position, transform.rotation);   
     }
 }

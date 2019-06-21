@@ -5098,6 +5098,7 @@ MonoBehaviour:
   health: 3
   corpse: {fileID: 6578194797747957951, guid: 497c7876a6289764c8c0f7c5c5425e36, type: 3}
   playerSprite: {fileID: 6578194796865454894}
+  playerDamage: {fileID: 8300000, guid: a435500a4046abb41a0686c3c7d9e171, type: 3}
 --- !u!114 &181127340
 MonoBehaviour:
   m_ObjectHideFlags: 0
