@@ -15,10 +15,10 @@ public class UIClickSounds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Mouse0))
+        /*if (Input.GetKeyUp(KeyCode.Mouse0))
         {
-            /*clickUISounds.clip = clickSoundsArray[Random.Range(0, clickSoundsArray.Length)];*/
+            clickUISounds.clip = clickSoundsArray[Random.Range(0, clickSoundsArray.Length)];
             clickUISounds.PlayOneShot(uiSound);
-        }
+        }*/
     }
 }
