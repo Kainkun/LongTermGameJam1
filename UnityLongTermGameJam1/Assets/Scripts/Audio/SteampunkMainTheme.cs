@@ -11,7 +11,6 @@ public class SteampunkMainTheme : MonoBehaviour
     {
         steamPunkTheme = GetComponent<AudioSource>();
         steamPunkTheme.PlayDelayed(24.033f);
-        //BrittanyLevelCompletion.Script.LevelLength
     }
 
     // Update is called once per frame

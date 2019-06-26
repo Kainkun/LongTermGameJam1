@@ -21,6 +21,13 @@ public class sineBob : MonoBehaviour
     {
         startY = transform.localPosition.y;
         startX = transform.localPosition.x;
+
+        StartCoroutine(playAnimation());
+    }
+
+    public IEnumerator playAnimation()
+    {
+        yield return new WaitForSeconds(24.033f);
     }
 
     // Update is called once per frame
