@@ -51,7 +51,7 @@ public class BrittanyHealthHearts : MonoBehaviour
                 i++;
                 if(currentHealth >= i * healthPerHeart)
                 {
-                    image.sprite = healthSprites.[healthSprites.Length - 1];
+                    image.sprite = healthSprites[healthSprites.Length - 1];
                 }
                 else
                 {
