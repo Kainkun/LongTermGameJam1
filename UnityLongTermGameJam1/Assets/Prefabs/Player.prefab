@@ -4991,6 +4991,7 @@ GameObject:
   - component: {fileID: 1943251785437680131}
   - component: {fileID: 1439367768300047712}
   - component: {fileID: 181127340}
+  - component: {fileID: 5972457995526090127}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5121,6 +5122,28 @@ MonoBehaviour:
   weaponPosition: {fileID: 2430237847868469016}
   currWeaponIndex: 0
   maxWeapons: 1
+--- !u!114 &5972457995526090127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6578194797747957951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a461b6d29f4e374983cba2f4d64a7e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHearts: 3
+  currentHealth: 0
+  healthImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  healthSprites:
+  - {fileID: 21300000, guid: 7fa018cc1d03bf04084cfc87211b2714, type: 3}
+  - {fileID: 21300000, guid: b65019918e7fca84fb9fcb333ff2160f, type: 3}
+  - {fileID: 21300000, guid: eb1c4297539e142489b6534dca2202d1, type: 3}
 --- !u!1 &6761239124159711058
 GameObject:
   m_ObjectHideFlags: 0

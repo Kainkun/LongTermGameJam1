@@ -21,7 +21,13 @@ public class BrittanyHealthHearts : MonoBehaviour
         checkHealthAmount();
     }
 
-   void checkHealthAmount()
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+            TakeDamage(1);
+    }
+
+    void checkHealthAmount()
     {
         for(int i = 0; i < maxHeartAmount; i++)
         {
