@@ -9,17 +9,34 @@ public class sineBob : MonoBehaviour
     public float speed;
     public float offset;
 
+
+    public bool useX;
+    float startX;
+    public float width;
+    public float Xspeed;
+    public float Xoffset;
+
     // Start is called before the first frame update
     void Start()
     {
-        startY = transform.position.y;
+        startY = transform.localPosition.y;
+        startX = transform.localPosition.x;
+
+        StartCoroutine(playAnimation());
+    }
+
+    public IEnumerator playAnimation()
+    {
+        yield return new WaitForSeconds(24.033f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 pos = transform.position;
+        Vector3 pos = transform.localPosition;
         pos.y = startY + Mathf.Sin(Time.time * speed + offset) * height;
-        transform.position = pos;
+        if(useX)
+        pos.x = startX + Mathf.Sin(Time.time * Xspeed + Xoffset) * width;
+        transform.localPosition = pos;
     }
 }

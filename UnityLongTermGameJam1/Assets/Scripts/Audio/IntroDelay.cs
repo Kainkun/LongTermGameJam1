@@ -15,16 +15,6 @@ public class IntroDelay : MonoBehaviour
         introSteamPunk.PlayDelayed(2.7f);
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        damagePlayer enemy = collision.gameObject.GetComponent<damagePlayer>();
-        {
-            if (enemy != null)
-            {
-                //introSteamPunk.PlayOneShot(playerDamage);
-            }
-        }
-    }
 
     // Update is called once per frame
     void Update()

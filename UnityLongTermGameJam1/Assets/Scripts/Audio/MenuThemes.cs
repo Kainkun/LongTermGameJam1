@@ -6,6 +6,7 @@ public class MenuThemes : MonoBehaviour
 {
     AudioSource menuTheme;
     public AudioClip[] audioClipArray;
+    public AudioClip uiClick;
 
     
     void Start()
@@ -15,12 +16,20 @@ public class MenuThemes : MonoBehaviour
         menuTheme.Play();
     }
 
+    public void UIClick()
+    {
+        menuTheme.PlayOneShot(uiClick);
+    }
+
+    public void UIClickStopsMusic()
+    {
+        menuTheme.Stop();
+        UIClick();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            menuTheme.Stop();
-        }
+       
     }
 }
