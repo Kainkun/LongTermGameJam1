@@ -171,7 +171,6 @@ MonoBehaviour:
   weapon: {fileID: 1741967445998644332}
   HoldPositionAtEnd: 0
   ShootInterval: 2
-  ShootIntervalTime: 0.1
 --- !u!114 &1741967445367141524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,6 +357,7 @@ MonoBehaviour:
   resources: 10
   canShoot: 1
   timeUntilCanShoot: 0
+  ShotSound: {fileID: 8300000, guid: 83991aea626d56248972c23c317f2525, type: 3}
 --- !u!212 &1741967445998644330
 SpriteRenderer:
   m_ObjectHideFlags: 0

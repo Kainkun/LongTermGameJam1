@@ -18,14 +18,17 @@ public class BulletSound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            bulletSounds.PlayOneShot(CyberpunkGunshot, 0.3F);
-            bulletSounds.pitch = Random.Range(pitchMin, pitchMax);
+            
         }
+        */
     }
     public void playSound()
     {
+        bulletSounds.PlayOneShot(CyberpunkGunshot, 0.3F);
+        bulletSounds.pitch = Random.Range(pitchMin, pitchMax);
         bulletSounds.PlayOneShot(CyberpunkGunshot);
     }
 }

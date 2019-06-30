@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PeaShooter : Weapon{
 
+    public AudioClip ShotSound;
+
     public override void shoot(KeyCode shoot){
         
         if (this.canShoot == true){
@@ -21,6 +23,11 @@ public class PeaShooter : Weapon{
                 shot.speed = bulletSpeed;
             }
 
+            BulletSound soundScript = GameObject.FindWithTag("Player").GetComponent<BulletSound>(); // get script that plays bullet sound
+            if(ShotSound != null)
+            soundScript.CyberpunkGunshot = ShotSound; //set sound
+            soundScript.playSound();
+
             base.shoot(shoot); //Always run this at the end when you shoot something
         }
     }
@@ -35,6 +42,10 @@ public class PeaShooter : Weapon{
                 shot.direction = t.right;
                 shot.speed = bulletSpeed;
             }
+
+            BulletSound soundScript = GameObject.FindWithTag("Player").GetComponent<BulletSound>(); // get script that plays bullet sound
+            soundScript.CyberpunkGunshot = ShotSound; //set sound
+            soundScript.playSound();
 
             base.shoot(); //Always run this at the end when you shoot something
         }
