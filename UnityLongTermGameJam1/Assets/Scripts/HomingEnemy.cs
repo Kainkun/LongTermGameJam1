@@ -66,7 +66,7 @@ public class HomingEnemy : MonoBehaviour
         }
 
         //kill when out of bounds
-        if(Mathf.Abs(transform.position.x) > 15 || Mathf.Abs(transform.position.y) > 15)
+        if(Stage == 2 && (Mathf.Abs(transform.position.x) > 15 || Mathf.Abs(transform.position.y) > 15))
         {
             Destroy(gameObject);
         }
