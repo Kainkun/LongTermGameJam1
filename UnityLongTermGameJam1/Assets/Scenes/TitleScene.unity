@@ -601,22 +601,22 @@ MonoBehaviour:
   m_text: 'Kain Shepard (Director)
 
 
-    Carter Andrews (Programmer)
-
-
-    Roselynn Conrady (Programmer)
-
-
-    Brittany Hughes (Programmer)
-
-
-    Jacob Golden-Needham (Programmer)
+    Byron Beasley (Music)
 
 
     Naseem Tahbaz (Artist)
 
 
-    Byron Beasley (Music)'
+    Jacob Golden-Needham (Programmer)
+
+
+    Brittany Hughes (Programmer)
+
+
+    Carter Andrews (Programmer)
+
+
+    Roselynn Conrady (Programmer)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
