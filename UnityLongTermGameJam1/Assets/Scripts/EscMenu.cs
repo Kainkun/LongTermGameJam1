@@ -44,7 +44,7 @@ public class EscMenu : MonoBehaviour
 
     public void Menu()
     {
-        FindObjectOfType<BrittanyLevelChanger>().FadeToLevel(0);
+        FindObjectOfType<BrittanyLevelChanger>().MenuIgnoreScore();
         Time.timeScale = 1;
     }
 

@@ -37,6 +37,18 @@ public class BrittanyLevelChanger : MonoBehaviour
     }
     public void OnFadeComplete()
     {
+        if(levelToLoad == -1)
+        {
+            Score.ScoreScript.setScore(0);
+            SceneManager.LoadScene(0);
+        }
+        else
         SceneManager.LoadScene(levelToLoad);
+    }
+
+    public void MenuIgnoreScore()
+    {
+        levelToLoad = -1;
+        animator.SetTrigger("FadeOut");
     }
 }
