@@ -22,6 +22,11 @@ public class levelManager : MonoBehaviour
             nextLevel();
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha0) && Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            nextLevel();
+        }
+
         //if (FindObjectsOfType<EnemySpawner>().Length == 0&&GameObject.FindGameObjectsWithTag("enemy").Length==0)
          //   nextLevel();
     }
