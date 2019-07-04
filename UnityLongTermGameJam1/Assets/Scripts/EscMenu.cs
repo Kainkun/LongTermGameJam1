@@ -28,6 +28,11 @@ public class EscMenu : MonoBehaviour
             toggleMenu();
         }
 
+        if(menuOpen && eventSystem.GetComponent<EventSystem>().currentSelectedGameObject == null && (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0 || Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0))
+        {
+            eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(resume);
+        }
+
     }
 
     void toggleMenu()
@@ -65,5 +70,10 @@ public class EscMenu : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+
+    public void SetButtonSelectionNull()
+    {
+        eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(null);
     }
 }

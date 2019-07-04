@@ -13,12 +13,18 @@ public class MainMenu : MonoBehaviour
     public GameObject slider;
     public GameObject eventSystem;
     public GameObject back;
+    public GameObject play;
 
     private void Update()
     {
         if(Input.GetButtonDown("Back") && creditsOpen)
         {
             toggleCredits();
+        }
+
+        if (eventSystem.GetComponent<EventSystem>().currentSelectedGameObject == null && (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0 || Mathf.Abs(Input.GetAxisRaw("Vertical")) > 0))
+        {
+            eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(play);
         }
     }
 
@@ -64,5 +70,10 @@ public class MainMenu : MonoBehaviour
             creditsOpen = true;
         }
 
+    }
+
+    public void SetButtonSelectionNull()
+    {
+        eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(null);
     }
 }
