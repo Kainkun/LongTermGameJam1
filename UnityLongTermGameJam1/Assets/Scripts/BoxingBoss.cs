@@ -57,6 +57,7 @@ public class BoxingBoss : MonoBehaviour
             {
                 if ((armor == null || armor.GetComponent<EnemyHealth>().health <= 0) && !dead)
                 {
+                    player.GetComponent<PlayerHealth>().permInvincible = true;
                     StartCoroutine(Die());
                 }
             }

@@ -21,7 +21,8 @@ public class HighScore : MonoBehaviour
                 PlayerPrefs.SetInt("HighScore", highscore);
             }
         }
-        else if (PlayerPrefs.HasKey("HighScore"))
+
+        if (PlayerPrefs.HasKey("HighScore"))
         {
             highscore = PlayerPrefs.GetInt("HighScore");
             GetComponent<Text>().text = "High-Score: " + highscore;

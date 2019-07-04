@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 1072646964019007673}
   - component: {fileID: 1072646964019007678}
   - component: {fileID: 1072646964019007679}
+  - component: {fileID: 549958888}
+  - component: {fileID: 549958887}
   m_Layer: 0
   m_Name: RobotBody
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1072646964019007672}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.69591093, y: -0.8031504, z: 0.63183594}
+  m_LocalPosition: {x: 0.69591093, y: 0.036849577, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1072646964228098293}
@@ -92,8 +94,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b866ebc55e2acfa4890b11c20e757723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 500
+  health: 5
   enemySprite: {fileID: 1072646964019007678}
+  FallOnDeath: 1
+--- !u!61 &549958888
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072646964019007672}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.13, y: -0.68}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.5, y: 4}
+    newSize: {x: 1.75, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.47, y: 2.33}
+  m_EdgeRadius: 0
+--- !u!114 &549958887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072646964019007672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 110de390045295a4abe16e90e4112e81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  invulnerabilityDuration: 1
 --- !u!1 &1072646964228098292
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,6 +147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1072646964228098293}
   - component: {fileID: 1072646964228098282}
+  - component: {fileID: 1056925181}
   m_Layer: 0
   m_Name: (B.O.B) Biomechanical Organic Being
   m_TagString: Untagged
@@ -142,17 +186,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16fca927b5899f5358df3119cb1259c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToStartFighting: 2
   fists:
   - {fileID: 1072646964258172679}
   - {fileID: 1072646965864999036}
   head: {fileID: 1072646964858689771}
   body: {fileID: 1072646964019007678}
   armor: {fileID: 1072646964625728222}
+  PSelectric: {fileID: 348830440373972231, guid: 5f4ce9df0729a184d902ea8f814d47e4,
+    type: 3}
+  PSexplosion: {fileID: 348830440373972231, guid: 4053d3b3ef493b245a65b42b0f808699,
+    type: 3}
   canFire: 
   fistTrackTime: 1
   fistSpeed: 0.5
   offScreenTime: 0.5
   timeBetweenPunches: 1.5
+--- !u!114 &1056925181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072646964228098292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6676061bb7f3e574b85b839826d2abb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enterspeed: 2
+  stopAtx: 6.5
+  sinspeed: 0.5
+  sinHeight: 1
 --- !u!1 &1072646964258172678
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,10 +228,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1072646964258172676}
   - component: {fileID: 1072646964258172679}
-  - component: {fileID: 1072646964258172677}
+  - component: {fileID: 709912182}
+  - component: {fileID: 709912181}
   m_Layer: 0
   m_Name: RobotFist
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,7 +245,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1072646964258172678}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.83, y: -0.78, z: 0.63183594}
+  m_LocalPosition: {x: -0.83, y: 0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1072646964228098293}
@@ -233,7 +299,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1072646964258172677
+--- !u!61 &709912182
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072646964258172678}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.75, y: 2}
+    newSize: {x: 1.75, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.28, y: 1.36}
+  m_EdgeRadius: 0
+--- !u!114 &709912181
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -242,11 +334,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1072646964258172678}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b866ebc55e2acfa4890b11c20e757723, type: 3}
+  m_Script: {fileID: 11500000, guid: 110de390045295a4abe16e90e4112e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 500
-  enemySprite: {fileID: 0}
+  damage: 1
+  invulnerabilityDuration: 1
 --- !u!1 &1072646964309754722
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +429,7 @@ GameObject:
   - component: {fileID: 1072646964625728217}
   - component: {fileID: 1072646964625728222}
   - component: {fileID: 1072646964625728223}
+  - component: {fileID: 2018722490}
   m_Layer: 0
   m_Name: RobotArmor
   m_TagString: Untagged
@@ -352,7 +445,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1072646964625728216}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.59, y: -1.1608787, z: 0.63183594}
+  m_LocalPosition: {x: 0.59, y: -0.32087865, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1072646964228098293}
@@ -418,8 +511,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b866ebc55e2acfa4890b11c20e757723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 500
-  enemySprite: {fileID: 0}
+  health: 5
+  enemySprite: {fileID: 1072646964625728222}
+  FallOnDeath: 1
+--- !u!61 &2018722490
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072646964625728216}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.31}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.5, y: 4}
+    newSize: {x: 1.75, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.03, y: 2.58}
+  m_EdgeRadius: 0
 --- !u!1 &1072646964858689781
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,9 +551,11 @@ GameObject:
   - component: {fileID: 1072646964858689770}
   - component: {fileID: 1072646964858689771}
   - component: {fileID: 1072646964858689768}
+  - component: {fileID: 1424624679}
+  - component: {fileID: 1424624678}
   m_Layer: 0
   m_Name: RobotHead
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -446,7 +568,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1072646964858689781}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.42271137, y: 0.5299663, z: 0.63183594}
+  m_LocalPosition: {x: 0.42271137, y: 1.3699663, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1072646964309754723}
@@ -513,8 +635,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b866ebc55e2acfa4890b11c20e757723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
+  health: 5
   enemySprite: {fileID: 1072646964858689771}
+  FallOnDeath: 1
+--- !u!61 &1424624679
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072646964858689781}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.75, y: 2}
+    newSize: {x: 1.75, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.79}
+  m_EdgeRadius: 0
+--- !u!114 &1424624678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072646964858689781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 110de390045295a4abe16e90e4112e81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  invulnerabilityDuration: 1
 --- !u!1 &1072646965864999039
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,10 +688,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1072646965864999037}
   - component: {fileID: 1072646965864999036}
-  - component: {fileID: 1072646965864999026}
+  - component: {fileID: 1497164795}
+  - component: {fileID: 1497164794}
   m_Layer: 0
   m_Name: RobotFist (1)
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -541,7 +705,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1072646965864999039}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.76, y: -1.79, z: 0.63183594}
+  m_LocalPosition: {x: -0.76, y: -0.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1072646964228098293}
@@ -595,7 +759,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1072646965864999026
+--- !u!61 &1497164795
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072646965864999039}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.75, y: 2}
+    newSize: {x: 1.75, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.28, y: 1.36}
+  m_EdgeRadius: 0
+--- !u!114 &1497164794
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -604,8 +794,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1072646965864999039}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b866ebc55e2acfa4890b11c20e757723, type: 3}
+  m_Script: {fileID: 11500000, guid: 110de390045295a4abe16e90e4112e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 500
-  enemySprite: {fileID: 0}
+  damage: 1
+  invulnerabilityDuration: 1

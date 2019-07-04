@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public GameObject corpse;
     public SpriteRenderer playerSprite;
     public static PlayerHealth instance;
+    public bool permInvincible;
 
     public AudioClip playerDamage;
 
@@ -67,7 +68,7 @@ public class PlayerHealth : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         damagePlayer enemy = collision.gameObject.GetComponent<damagePlayer>();
-        if (enemy != null)
+        if (enemy != null && !permInvincible)
         {
             GetComponent<AudioSource>().PlayOneShot(playerDamage);
             takeDamage(enemy.damage, enemy.invulnerabilityDuration);
