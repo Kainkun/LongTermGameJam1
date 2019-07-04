@@ -7,6 +7,8 @@ public class EnemyHealth : MonoBehaviour
 {
     public int health;
     public SpriteRenderer enemySprite;
+    public bool FallOnDeath;
+    bool dead;
 
     void speak()
 
@@ -51,7 +53,18 @@ public class EnemyHealth : MonoBehaviour
         GetComponentInChildren<Slider>().value = health; // reference to the slider
         if(health <= 0)
         {
+
+            if(!FallOnDeath)
             Destroy(gameObject);
+            else if(!dead)
+            {
+                Rigidbody2D rb = gameObject.AddComponent<Rigidbody2D>();
+
+                rb.velocity = new Vector2(0, 3);
+                Destroy(gameObject, 5);
+
+                dead = true;
+            }
         }
     }
 

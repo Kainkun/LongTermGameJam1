@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class BoxingBoss : MonoBehaviour
 {
-
     public SpriteRenderer[] fists;
     public SpriteRenderer head;
     public SpriteRenderer body;
     public SpriteRenderer armor;
+    bool dead;
+    public GameObject PSelectric;
+    public GameObject PSexplosion;
 
     GameObject player;
 
@@ -23,6 +25,7 @@ public class BoxingBoss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         postitions = new Vector3[fists.Length];
         canFire = new bool[fists.Length];
         player = GameObject.FindGameObjectWithTag("Player");
@@ -38,7 +41,17 @@ public class BoxingBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(head == null || head.GetComponent<EnemyHealth>().health <= 0)
+        {
+            if (body == null || body.GetComponent<EnemyHealth>().health <= 0)
+            {
+                if ((armor == null || armor.GetComponent<EnemyHealth>().health <= 0) && !dead)
+                {
+                    StartCoroutine(Die());
+                }
+            }
+        }
+
     }
 
     Vector3[] postitions;
@@ -62,7 +75,8 @@ public class BoxingBoss : MonoBehaviour
 
         canFire[i] = false;
 
-        while(time > 0){
+        while(time > 0 && !dead){
+            if(player != null)
             fists[i].transform.position = Vector3.Lerp(fists[i].transform.position, new Vector3(fists[i].transform.position.x, player.transform.position.y, 0), 9f * Time.deltaTime);
             time -= Time.deltaTime;
             yield return null;
@@ -73,7 +87,7 @@ public class BoxingBoss : MonoBehaviour
 
     IEnumerator punch(int i){
         bool done = false;
-        while(fists[i].isVisible && !done){
+        while(fists[i].isVisible && !done && !dead){
             fists[i].transform.Translate(Vector3.left * fistSpeed, Space.World);
             yield return null;
         }
@@ -81,11 +95,12 @@ public class BoxingBoss : MonoBehaviour
 
         yield return new WaitForSeconds(offScreenTime);
 
+        if(!dead)
         fists[i].transform.position = this.transform.position + Vector3.right * 30;
         
         //Retract Step
 
-        while(Vector3.Distance(fists[i].transform.position, postitions[i]) > .5f){
+        while(Vector3.Distance(fists[i].transform.position, postitions[i]) > .5f && !dead){
             fists[i].transform.position = Vector3.Lerp(fists[i].transform.position, postitions[i], 15f * Time.deltaTime);
             yield return null;
         }
@@ -93,5 +108,39 @@ public class BoxingBoss : MonoBehaviour
         canFire[i] = true;
 
         yield break;
+    }
+
+    IEnumerator Die()
+    {
+        dead = true;
+
+        foreach (SpriteRenderer fist in fists)
+        {
+            Instantiate(PSelectric, fist.transform.position, Quaternion.identity);
+        }
+
+        for (int i = 15; i > 0; i--)
+        {
+            foreach (SpriteRenderer fist in fists)
+            {
+                fist.color = Color.black;
+            }
+
+            yield return new WaitForSeconds(0.05f);
+
+            foreach (SpriteRenderer fist in fists)
+            {
+                fist.color = Color.white;
+            }
+
+            yield return new WaitForSeconds(0.05f);
+        }
+
+        foreach (SpriteRenderer fist in fists)
+        {
+            Instantiate(PSexplosion, fist.transform.position, Quaternion.identity);
+            Destroy(gameObject, 0.2f);
+        }
+        
     }
 }

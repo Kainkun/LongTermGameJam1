@@ -19,13 +19,13 @@ public class SceneTransition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      if (BrittanyLevelCompletion.Script.time >= 0.6 && !sound1HasPlayed)
+      if (Time.time >= 0.6 && !sound1HasPlayed)
         {
             sound1HasPlayed = true;
             GetComponent<AudioSource>().PlayOneShot(HopInSound);
         }
 
-      if (BrittanyLevelCompletion.Script.percent >= 100 && !sound2HasPlayed)
+      if (GameObject.Find("LevelPercentComplete") != null && BrittanyLevelCompletion.Script.percent >= 100 && !sound2HasPlayed)
         {
             sound2HasPlayed = true;
             GetComponent<AudioSource>().PlayOneShot(HopOutSound);

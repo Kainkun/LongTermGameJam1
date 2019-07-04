@@ -30,12 +30,21 @@ public class PlayerHealth : MonoBehaviour
     {
         Instantiate(corpse, transform.position, transform.rotation);
         FindObjectOfType<levelManager>().beginResetLevel();
-        Destroy(gameObject);
+        //Destroy(gameObject);
+
+        GetComponent<PlayerMovement>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<PlayerHealth>().enabled = false;
+        GetComponent<WeaponShooter>().enabled = false;
+        transform.GetChild(0).gameObject.SetActive(false);
+        transform.GetChild(1).gameObject.SetActive(false);
+        transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
     }
     private IEnumerator becomeInvincible(float duration)
     {
         GetComponent<BoxCollider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
+        if(health > 0)
         GetComponent<BoxCollider2D>().enabled = true;
     }
     private void OnCollisionEnter2D(Collision2D collision)

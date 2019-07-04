@@ -43,9 +43,12 @@ public class PeaShooter : Weapon{
                 shot.speed = bulletSpeed;
             }
 
-            BulletSound soundScript = GameObject.FindWithTag("Player").GetComponent<BulletSound>(); // get script that plays bullet sound
-            soundScript.CyberpunkGunshot = ShotSound; //set sound
-            soundScript.playSound();
+            if (GameObject.FindWithTag("Player") != null)
+            {
+                BulletSound soundScript = GameObject.FindWithTag("Player").GetComponent<BulletSound>(); // get script that plays bullet sound
+                soundScript.CyberpunkGunshot = ShotSound; //set sound
+                soundScript.playSound();
+            }
 
             base.shoot(); //Always run this at the end when you shoot something
         }
