@@ -9,7 +9,7 @@ public class PeaShooter : Weapon{
     public override void shoot(KeyCode shoot){
         
         if (this.canShoot == true){
-            if (!Input.GetKey(shoot)) {
+            if (!Input.GetButton("Fire") || Time.timeScale == 0) {
                 return;
             }
 
