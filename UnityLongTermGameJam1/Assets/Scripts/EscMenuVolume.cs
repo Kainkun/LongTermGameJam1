@@ -14,5 +14,6 @@ public class EscMenuVolume : MonoBehaviour
     public void SetVolume(float newVolume)
     {
         AudioListener.volume = newVolume;
+        PlayerPrefs.SetFloat("Volume", newVolume);
     }
 }

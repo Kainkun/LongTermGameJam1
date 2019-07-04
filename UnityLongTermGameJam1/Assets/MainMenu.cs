@@ -30,6 +30,9 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        if(PlayerPrefs.HasKey("Volume"))
+            AudioListener.volume = PlayerPrefs.GetFloat("Volume");
+
         slider.GetComponent<Slider>().value = AudioListener.volume;
     }
 
@@ -49,6 +52,7 @@ public class MainMenu : MonoBehaviour
     {
         //Debug.Log(newVolume); // Testing to see if volume slider works
         AudioListener.volume = newVolume;
+        PlayerPrefs.SetFloat("Volume", newVolume);
     }
     public void ViewCredits ()
     {
