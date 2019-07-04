@@ -14,7 +14,7 @@ public class HighScore : MonoBehaviour
 
         if(Score.ScoreScript != null)
         {
-            if (Score.ScoreScript.getScore() > highscore)
+            if (Score.ScoreScript.getScore() > PlayerPrefs.GetInt("HighScore"))
             {
                 highscore = Score.ScoreScript.getScore();
                 GetComponent<Text>().text = "High-Score: " + highscore;
@@ -25,13 +25,18 @@ public class HighScore : MonoBehaviour
         if (PlayerPrefs.HasKey("HighScore"))
         {
             highscore = PlayerPrefs.GetInt("HighScore");
+            if(highscore != 0)
             GetComponent<Text>().text = "High-Score: " + highscore;
         }
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Delete) && Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            PlayerPrefs.SetInt("HighScore", 0);
+            GetComponent<Text>().text = "";
+        }
     }
 }
