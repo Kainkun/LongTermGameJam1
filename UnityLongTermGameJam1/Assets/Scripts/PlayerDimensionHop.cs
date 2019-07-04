@@ -31,7 +31,7 @@ public class PlayerDimensionHop : MonoBehaviour
 
     void Update()
     {
-        if (decreaseScore && Score.ScoreScript.getPrevScore() < Score.ScoreScript.getScore())
+        if (Score.ScoreScript != null && decreaseScore && Score.ScoreScript.getPrevScore() < Score.ScoreScript.getScore())
         {
             Score.ScoreScript.SubScore(3);
         }
@@ -103,6 +103,7 @@ public class PlayerDimensionHop : MonoBehaviour
         player.GetComponent<WeaponShooter>().enabled = true;
 
         decreaseScore = false;
+        if(Score.ScoreScript != null)
         Score.ScoreScript.setScore(Score.ScoreScript.getPrevScore());
     }
 

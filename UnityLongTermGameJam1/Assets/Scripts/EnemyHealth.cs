@@ -54,6 +54,7 @@ public class EnemyHealth : MonoBehaviour
         GetComponentInChildren<Slider>().value = health; // reference to the slider
         if(health <= 0)
         {
+            if(Score.ScoreScript != null)
             Score.ScoreScript.AddScore(50);
 
             if (!FallOnDeath)
@@ -68,8 +69,8 @@ public class EnemyHealth : MonoBehaviour
                 dead = true;
             }
         }
-        else
-        Score.ScoreScript.AddScore(5);
+        else if (Score.ScoreScript != null)
+            Score.ScoreScript.AddScore(5);
     }
 
     IEnumerator damageBlink()

@@ -18,7 +18,8 @@ public class PlayerHealth : MonoBehaviour
     }
     private void takeDamage(int amount,float invulnAmount)
     {
-        Score.ScoreScript.SubScore(15);
+        if (Score.ScoreScript != null)
+            Score.ScoreScript.SubScore(15);
 
         GetComponent<BrittanyHealthHearts>().TakeDamage(-3);
         ScreenShake.instance.shake(0.2f, 50, 0.5f);
