@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BoxingBoss : MonoBehaviour
 {
+    public float timeToStartFighting;
+
     public SpriteRenderer[] fists;
     public SpriteRenderer head;
     public SpriteRenderer body;
@@ -25,18 +27,26 @@ public class BoxingBoss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(startFight());
+    }
+
+    IEnumerator startFight()
+    {
+        yield return new WaitForSeconds(timeToStartFighting);
 
         postitions = new Vector3[fists.Length];
         canFire = new bool[fists.Length];
         player = GameObject.FindGameObjectWithTag("Player");
 
-        for(int i = 0; i < fists.Length; i++){
+        for (int i = 0; i < fists.Length; i++)
+        {
             canFire[i] = true;
             postitions[i] = fists[i].transform.position;
         }
 
         StartCoroutine(Stage1());
     }
+
 
     // Update is called once per frame
     void Update()
@@ -139,8 +149,13 @@ public class BoxingBoss : MonoBehaviour
         foreach (SpriteRenderer fist in fists)
         {
             Instantiate(PSexplosion, fist.transform.position, Quaternion.identity);
-            Destroy(gameObject, 0.2f);
+
+            Destroy(fist, 0.2f);
+
         }
-        
+
+        yield return new WaitForSeconds(5f);
+        FindObjectOfType<BrittanyLevelChanger>().FadeToLevel(0);
+
     }
 }

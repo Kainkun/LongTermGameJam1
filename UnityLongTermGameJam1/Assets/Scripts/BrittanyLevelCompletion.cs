@@ -8,7 +8,7 @@ public class BrittanyLevelCompletion : MonoBehaviour
     public float time;
     public float LevelLength;
     public float percent;
-   // public Image loadingBar;
+    public Image loadingBar;
 
     public bool levelOver;
 
@@ -27,7 +27,7 @@ public class BrittanyLevelCompletion : MonoBehaviour
         time += Time.deltaTime;
         percent = (time / LevelLength)*100;
 
-       // loadingBar.fillAmount = time/LevelLength;
+        loadingBar.fillAmount = time/LevelLength;
 
         //if time is greater than levelLength the level should be over
         if (time > LevelLength)

@@ -9,30 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScene.unity
     guid: 140699b39868c584bafca09e6e33ee93
   - enabled: 1
-    path: Assets/Scenes/Carter'sSampleLevel1.unity
-    guid: da91b4ae694579848b1d199d02056be2
+    path: Assets/Scenes/GamePlayLevelsPrototype/FirstEasyLevel.unity
+    guid: 0167c44fbdfbc8f4d88aca89f51c955b
   - enabled: 1
-    path: Assets/Scenes/Carter'sSampleLevel2.unity
-    guid: ae4949e98f414fd42b195a2c252d79e0
-  - enabled: 1
-    path: Assets/Scenes/Carter'sBossScene.unity
-    guid: 8c5a78012c9a5ca428f097784f9996e1
-  - enabled: 1
-    path: Assets/Scenes/EndingScene.unity
-    guid: d750dbd4cfd625e4facb8b4a5a935a1e
+    path: Assets/Scenes/GamePlayLevelsPrototype/BossLevel.unity
+    guid: e96462c63a3993e42acea21f4faf9b13
   - enabled: 1
     path: Assets/Scenes/CreditsScene.unity
     guid: b6fcaf51fd3568f42b2d68b2d7e1c800
-  - enabled: 1
-    path: Assets/Animation/BrittanyHughes.unity
-    guid: 38f43cbe6346b8d4ead679c97e92c229
-  - enabled: 1
-    path: Assets/Animation/Level2.unity
-    guid: 7b2679d57d046d84fa5a852d8c5ad392
-  - enabled: 1
-    path: Assets/Scenes/GamePlayLevelsPrototype/KainLevel.unity
-    guid: b1e74fc4533309f43b413c5dbbe023db
-  - enabled: 1
-    path: Assets/Scenes/GamePlayLevelsPrototype/TemplateLevel.unity
-    guid: c20dc34e74c69c64db8a30a916c26d66
   m_configObjects: {}
