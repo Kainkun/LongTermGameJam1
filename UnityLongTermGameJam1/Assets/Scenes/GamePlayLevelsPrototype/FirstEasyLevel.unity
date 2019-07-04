@@ -1752,6 +1752,16 @@ PrefabInstance:
       propertyPath: LevelLength
       value: 72
       objectReference: {fileID: 0}
+    - target: {fileID: 8006931179560491807, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409346333477335142, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8629807513195431944, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
       propertyPath: m_AnchorMax.x
