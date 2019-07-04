@@ -44,6 +44,7 @@ public class EscMenu : MonoBehaviour
 
     public void Menu()
     {
+        GameObject.FindWithTag("Player").GetComponent<BoxCollider2D>().enabled = false;
         FindObjectOfType<BrittanyLevelChanger>().MenuIgnoreScore();
         Time.timeScale = 1;
     }

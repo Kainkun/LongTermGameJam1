@@ -2,10 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject credits;
+    bool creditsOpen;
+    public GameObject slider;
+
+    private void Start()
+    {
+        slider.GetComponent<Slider>().value = AudioListener.volume;
+    }
+
+
     public void PlayGame ()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -24,6 +34,21 @@ public class MainMenu : MonoBehaviour
     }
     public void ViewCredits ()
     {
-        SceneManager.LoadScene(3);
+        toggleCredits();
+    }
+
+    void toggleCredits()
+    {
+        if (creditsOpen)
+        {
+            credits.SetActive(false);
+            creditsOpen = false;
+        }
+        else
+        {
+            credits.SetActive(true);
+            creditsOpen = true;
+        }
+
     }
 }

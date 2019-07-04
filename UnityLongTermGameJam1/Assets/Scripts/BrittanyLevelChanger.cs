@@ -40,6 +40,7 @@ public class BrittanyLevelChanger : MonoBehaviour
         if(levelToLoad == -1)
         {
             Score.ScoreScript.setScore(0);
+            Score.ScoreScript.setPrevScore(0);
             SceneManager.LoadScene(0);
         }
         else
