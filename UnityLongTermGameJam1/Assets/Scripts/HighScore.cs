@@ -10,13 +10,21 @@ public class HighScore : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
         if(Score.ScoreScript != null)
         {
             if (Score.ScoreScript.getScore() > highscore)
             {
                 highscore = Score.ScoreScript.getScore();
                 GetComponent<Text>().text = "High-Score: " + highscore;
+                PlayerPrefs.SetInt("HighScore", highscore);
             }
+        }
+        else if (PlayerPrefs.HasKey("HighScore"))
+        {
+            highscore = PlayerPrefs.GetInt("HighScore");
+            GetComponent<Text>().text = "High-Score: " + highscore;
         }
     }
 
