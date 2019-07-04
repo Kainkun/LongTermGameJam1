@@ -98,6 +98,7 @@ public class BoxingBoss : MonoBehaviour
     IEnumerator punch(int i){
         bool done = false;
         while(fists[i].isVisible && !done && !dead){
+            
             fists[i].transform.Translate(Vector3.left * fistSpeed, Space.World);
             yield return null;
         }
@@ -111,7 +112,8 @@ public class BoxingBoss : MonoBehaviour
         //Retract Step
 
         while(Vector3.Distance(fists[i].transform.position, postitions[i]) > .5f && !dead){
-            fists[i].transform.position = Vector3.Lerp(fists[i].transform.position, postitions[i], 15f * Time.deltaTime);
+            if (fists[i].gameObject != null)
+                fists[i].transform.position = Vector3.Lerp(fists[i].transform.position, postitions[i], 15f * Time.deltaTime);
             yield return null;
         }
 
@@ -155,6 +157,7 @@ public class BoxingBoss : MonoBehaviour
         }
 
         yield return new WaitForSeconds(5f);
+        Score.ScoreScript.setPrevScore(0);
         FindObjectOfType<BrittanyLevelChanger>().FadeToLevel(0);
 
     }

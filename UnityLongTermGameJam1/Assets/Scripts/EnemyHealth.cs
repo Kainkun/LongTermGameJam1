@@ -46,6 +46,7 @@ public class EnemyHealth : MonoBehaviour
 
     void takeDamage()
     {
+
         ScreenShake.instance.shake(0.2f,50,0.5f);
         StartCoroutine(damageBlink());
         health -= 1;
@@ -53,8 +54,9 @@ public class EnemyHealth : MonoBehaviour
         GetComponentInChildren<Slider>().value = health; // reference to the slider
         if(health <= 0)
         {
+            Score.ScoreScript.AddScore(50);
 
-            if(!FallOnDeath)
+            if (!FallOnDeath)
             Destroy(gameObject);
             else if(!dead)
             {
@@ -66,6 +68,8 @@ public class EnemyHealth : MonoBehaviour
                 dead = true;
             }
         }
+        else
+        Score.ScoreScript.AddScore(5);
     }
 
     IEnumerator damageBlink()

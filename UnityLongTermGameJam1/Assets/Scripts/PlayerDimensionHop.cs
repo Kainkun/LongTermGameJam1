@@ -14,6 +14,8 @@ public class PlayerDimensionHop : MonoBehaviour
 
     public bool traveling;
     public bool returnRot;
+
+    bool decreaseScore;
     
 
     void Start()
@@ -29,7 +31,10 @@ public class PlayerDimensionHop : MonoBehaviour
 
     void Update()
     {
-        
+        if (decreaseScore && Score.ScoreScript.getPrevScore() < Score.ScoreScript.getScore())
+        {
+            Score.ScoreScript.SubScore(3);
+        }
 
         if (player != null)
         {
@@ -75,6 +80,7 @@ public class PlayerDimensionHop : MonoBehaviour
 
     IEnumerator HopInAnimation()
     {
+        decreaseScore = true;
         yield return new WaitForSeconds(1);
 
         spriteObj.SetActive(true);
@@ -96,6 +102,8 @@ public class PlayerDimensionHop : MonoBehaviour
         player.GetComponent<PlayerHealth>().enabled = true;
         player.GetComponent<WeaponShooter>().enabled = true;
 
+        decreaseScore = false;
+        Score.ScoreScript.setScore(Score.ScoreScript.getPrevScore());
     }
 
     IEnumerator HopOutAnimation()

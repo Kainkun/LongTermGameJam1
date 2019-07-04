@@ -18,6 +18,8 @@ public class PlayerHealth : MonoBehaviour
     }
     private void takeDamage(int amount,float invulnAmount)
     {
+        Score.ScoreScript.SubScore(15);
+
         GetComponent<BrittanyHealthHearts>().TakeDamage(-3);
         ScreenShake.instance.shake(0.2f, 50, 0.5f);
         StartCoroutine(damageBlink());
@@ -28,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
     }
     private void die()
     {
+
         Instantiate(corpse, transform.position, transform.rotation);
         FindObjectOfType<levelManager>().beginResetLevel();
         //Destroy(gameObject);

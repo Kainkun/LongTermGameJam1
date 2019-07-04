@@ -23,8 +23,7 @@ public class BrittanyHealthHearts : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-            TakeDamage(1);
+
     }
 
     void checkHealthAmount()

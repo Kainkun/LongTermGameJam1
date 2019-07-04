@@ -36,7 +36,9 @@ public class levelManager : MonoBehaviour
     }
     public void nextLevel()
     {
-        if(GetComponent<PlayerDimensionHop>() != null)
+        Score.ScoreScript.setPrevScore(Score.ScoreScript.getScore());
+
+        if (GetComponent<PlayerDimensionHop>() != null)
         GetComponent<PlayerDimensionHop>().HopOut();
         else
         FindObjectOfType<BrittanyLevelChanger>().FadeToNextLevel();

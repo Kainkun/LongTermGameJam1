@@ -24,6 +24,6 @@ public class MainMenu : MonoBehaviour
     }
     public void ViewCredits ()
     {
-        SceneManager.LoadScene(5); // Build Settings show Credits Scene as 5
+        SceneManager.LoadScene(3);
     }
 }
