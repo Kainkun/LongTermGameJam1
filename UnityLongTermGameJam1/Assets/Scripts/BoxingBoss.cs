@@ -98,7 +98,7 @@ public class BoxingBoss : MonoBehaviour
     IEnumerator punch(int i){
         bool done = false;
         while(fists[i].isVisible && !done && !dead){
-            
+            if(Time.timeScale != 0)
             fists[i].transform.Translate(Vector3.left * fistSpeed, Space.World);
             yield return null;
         }
