@@ -3,12 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject creditsBG;
     public GameObject credits;
     bool creditsOpen;
     public GameObject slider;
+    public GameObject eventSystem;
+    public GameObject back;
+
+    private void Update()
+    {
+        if(Input.GetButtonDown("Back") && creditsOpen)
+        {
+            toggleCredits();
+        }
+    }
 
     private void Start()
     {
@@ -41,12 +53,14 @@ public class MainMenu : MonoBehaviour
     {
         if (creditsOpen)
         {
-            credits.SetActive(false);
+            creditsBG.SetActive(false);
+            eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(credits);
             creditsOpen = false;
         }
         else
         {
-            credits.SetActive(true);
+            creditsBG.SetActive(true);
+            eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(back);
             creditsOpen = true;
         }
 

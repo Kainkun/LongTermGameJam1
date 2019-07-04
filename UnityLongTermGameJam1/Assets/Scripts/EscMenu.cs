@@ -1,14 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class EscMenu : MonoBehaviour
 {
     bool menuOpen;
     GameObject Canvas;
-    
+    public GameObject eventSystem;
+    public GameObject resume;
+
     void Start()
     {
+        eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(null);
         Canvas = transform.GetChild(0).gameObject;
     }
     
@@ -18,6 +22,12 @@ public class EscMenu : MonoBehaviour
         {
             toggleMenu();
         }
+
+        if (Input.GetButtonDown("Back") && menuOpen)
+        {
+            toggleMenu();
+        }
+
     }
 
     void toggleMenu()
@@ -26,12 +36,15 @@ public class EscMenu : MonoBehaviour
         {
             Time.timeScale = 1;
             Canvas.SetActive(false);
+            eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(null);
             menuOpen = false;
         }
         else
         {
             Time.timeScale = 0;
             Canvas.SetActive(true);
+            eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(null);
+            eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(resume);
             menuOpen = true;
         }
 
