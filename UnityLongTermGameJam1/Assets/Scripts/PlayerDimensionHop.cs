@@ -71,7 +71,7 @@ public class PlayerDimensionHop : MonoBehaviour
     public void HopOut()
     {
         player.GetComponent<PlayerMovement>().enabled = false;
-        player.GetComponent<BoxCollider2D>().enabled = false;
+        player.GetComponent<PolygonCollider2D>().enabled = false;
         player.GetComponent<PlayerHealth>().enabled = false;
         player.GetComponent<WeaponShooter>().enabled = false;
 
@@ -98,7 +98,7 @@ public class PlayerDimensionHop : MonoBehaviour
 
 
         player.GetComponent<PlayerMovement>().enabled = true;
-        player.GetComponent<BoxCollider2D>().enabled = true;
+        player.GetComponent<PolygonCollider2D>().enabled = true;
         player.GetComponent<PlayerHealth>().enabled = true;
         player.GetComponent<WeaponShooter>().enabled = true;
 

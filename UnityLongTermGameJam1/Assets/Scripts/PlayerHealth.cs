@@ -38,7 +38,7 @@ public class PlayerHealth : MonoBehaviour
         //Destroy(gameObject);
 
         GetComponent<PlayerMovement>().enabled = false;
-        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<PolygonCollider2D>().enabled = false;
         GetComponent<PlayerHealth>().enabled = false;
         GetComponent<WeaponShooter>().enabled = false;
         transform.GetChild(0).gameObject.SetActive(false);
@@ -47,10 +47,10 @@ public class PlayerHealth : MonoBehaviour
     }
     private IEnumerator becomeInvincible(float duration)
     {
-        GetComponent<BoxCollider2D>().enabled = false;
+        GetComponent<PolygonCollider2D>().enabled = false;
         yield return new WaitForSeconds(duration);
         if(health > 0)
-        GetComponent<BoxCollider2D>().enabled = true;
+        GetComponent<PolygonCollider2D>().enabled = true;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
