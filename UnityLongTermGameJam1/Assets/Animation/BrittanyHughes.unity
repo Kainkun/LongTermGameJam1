@@ -513,9 +513,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHearts: 3
-  currentHealth: 0
-  healthImages: []
-  healthSprites: []
+  currentHealth: 3
+  healthImages:
+  - {fileID: 1149327458}
+  - {fileID: 1782323644}
+  - {fileID: 787268352}
+  healthSprites:
+  - {fileID: 21300000, guid: 7fa018cc1d03bf04084cfc87211b2714, type: 3}
+  - {fileID: 21300000, guid: b65019918e7fca84fb9fcb333ff2160f, type: 3}
+  - {fileID: 21300000, guid: eb1c4297539e142489b6534dca2202d1, type: 3}
 --- !u!1 &1366038969
 GameObject:
   m_ObjectHideFlags: 0
