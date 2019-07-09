@@ -9,6 +9,7 @@ public class BulletSound : MonoBehaviour
     public AudioClip CyberpunkGunshot;
 
     public float pitchMin, pitchMax;
+    public float Volume = 0.7f;
 
     void Start()
     {
@@ -18,17 +19,12 @@ public class BulletSound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            
-        }
-        */
+
     }
     public void playSound()
     {
-        bulletSounds.PlayOneShot(CyberpunkGunshot, 0.3F);
-        bulletSounds.pitch = Random.Range(pitchMin, pitchMax);
         bulletSounds.PlayOneShot(CyberpunkGunshot);
+        bulletSounds.pitch = Random.Range(pitchMin, pitchMax);
+        bulletSounds.volume = Volume;
     }
 }
