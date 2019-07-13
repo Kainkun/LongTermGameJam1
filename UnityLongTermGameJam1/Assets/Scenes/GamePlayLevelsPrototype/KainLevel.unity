@@ -346,6 +346,7 @@ MonoBehaviour:
   CyberpunkGunshot: {fileID: 8300000, guid: a5f2f0895f0858e44879730ef666aa02, type: 3}
   pitchMin: 1
   pitchMax: 1.3
+  Volume: 0.7
 --- !u!4 &102368549
 Transform:
   m_ObjectHideFlags: 0
@@ -1388,16 +1389,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TemplateLevel
       objectReference: {fileID: 0}
-    - target: {fileID: 6362989806564562267, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: m_Name
-      value: OnionShip
-      objectReference: {fileID: 0}
-    - target: {fileID: 6362989806619492638, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 21
-      objectReference: {fileID: 0}
     - target: {fileID: 8616487848111941582, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1453,6 +1444,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3343561495163842764, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770411573759507411, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_TagString
+      value: BulletsContainer
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333867962698548502, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -17.699951
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333867962698548502, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.7999878
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134933351138529326, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_Name
+      value: WeaponPickupDefault(Clone)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2868415557948599804, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: currentHealth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362989806564562267, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_Name
+      value: OnionShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362989806619492638, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21
+      objectReference: {fileID: 0}
     - target: {fileID: 6362989807109773573, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
       propertyPath: m_Name
@@ -1467,6 +1498,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: sky
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362989807371806121, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6362989805946818642, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
@@ -1612,26 +1648,6 @@ PrefabInstance:
     - target: {fileID: 5754142055520797423, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
       propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3343561495163842764, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2770411573759507411, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: m_TagString
-      value: BulletsContainer
-      objectReference: {fileID: 0}
-    - target: {fileID: 4134933351138529326, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: m_Name
-      value: WeaponPickupDefault(Clone)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2868415557948599804, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: currentHealth
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4645929268159745700, guid: 415ded2dfc609b44685ac79a31ccfbc1,

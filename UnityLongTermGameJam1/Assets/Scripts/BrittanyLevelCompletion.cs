@@ -10,6 +10,8 @@ public class BrittanyLevelCompletion : MonoBehaviour
     public float percent;
     public Image loadingBar;
 
+    public bool crazytime; //for boss
+
     public bool levelOver;
 
     public static BrittanyLevelCompletion Script;
@@ -18,14 +20,25 @@ public class BrittanyLevelCompletion : MonoBehaviour
     {
         Script = this;
         //print("Starting");
+
+        if (crazytime)
+            LevelLength = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (time < LevelLength && GameObject.FindGameObjectWithTag("Player"))
+        if (time < LevelLength && GameObject.FindGameObjectWithTag("Player") && !crazytime)
         time += Time.deltaTime;
+
+        if (crazytime)
+        {
+           time = Mathf.PerlinNoise(Time.time, Mathf.Sin(Time.time)) * 0.8f;
+        }
+
         percent = (time / LevelLength)*100;
+
+
 
         loadingBar.fillAmount = time/LevelLength;
 
@@ -41,7 +54,7 @@ public class BrittanyLevelCompletion : MonoBehaviour
             }
         }
         percent = Mathf.Floor(percent);
-        GetComponent<Text>().text = percent.ToString() + "%";
+        GetComponent<Text>().text = percent.ToString();
        
      
     }
