@@ -358,7 +358,7 @@ MonoBehaviour:
   resources: 10
   canShoot: 1
   timeUntilCanShoot: 0
-  ShotSound: {fileID: 8300000, guid: 83991aea626d56248972c23c317f2525, type: 3}
+  ShotSound: {fileID: 8300000, guid: ad04eaee40ffdc846a606adcac90bf4f, type: 3}
 --- !u!212 &1741967445998644330
 SpriteRenderer:
   m_ObjectHideFlags: 0
