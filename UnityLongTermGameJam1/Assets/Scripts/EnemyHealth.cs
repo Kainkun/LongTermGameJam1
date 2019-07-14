@@ -10,6 +10,9 @@ public class EnemyHealth : MonoBehaviour
     public bool FallOnDeath;
     bool dead;
 
+    AudioSource enemyDamage;
+  
+
     void speak()
 
     {
@@ -20,13 +23,13 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+        enemyDamage = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -46,7 +49,7 @@ public class EnemyHealth : MonoBehaviour
 
     void takeDamage()
     {
-
+        enemyDamage.Play();
         ScreenShake.instance.shake(0.2f,50,0.5f);
         StartCoroutine(damageBlink());
         health -= 1;
@@ -54,7 +57,8 @@ public class EnemyHealth : MonoBehaviour
         GetComponentInChildren<Slider>().value = health; // reference to the slider
         if(health <= 0)
         {
-            if(Score.ScoreScript != null)
+
+            if (Score.ScoreScript != null)
             Score.ScoreScript.AddScore(50);
 
             if (!FallOnDeath)
