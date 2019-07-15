@@ -1558,6 +1558,10 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1642654133, guid: 415ded2dfc609b44685ac79a31ccfbc1, type: 3}
+      propertyPath: m_Color.a
+      value: 0.89411765
+      objectReference: {fileID: 0}
     - target: {fileID: 8616487848111941582, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1675,7 +1679,7 @@ PrefabInstance:
     - target: {fileID: 5677937062088089955, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 41.700073
+      value: 41.69995
       objectReference: {fileID: 0}
     - target: {fileID: 826511727710634011, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
