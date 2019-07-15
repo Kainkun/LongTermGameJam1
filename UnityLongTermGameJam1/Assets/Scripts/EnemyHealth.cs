@@ -55,6 +55,7 @@ public class EnemyHealth : MonoBehaviour
         takeDamageAS.clip = enemyDamage;
         takeDamageAS.pitch = Random.Range(pitchMin, pitchMax);
         takeDamageAS.Play();
+        Destroy(AudioObject, 5);
     }
 
     void takeDamage()
