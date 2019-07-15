@@ -10,7 +10,8 @@ public class EnemyHealth : MonoBehaviour
     public bool FallOnDeath;
     bool dead;
 
-    AudioSource enemyDamage;
+    public AudioClip enemyDamage;
+    public float pitchMin, pitchMax;
   
 
     void speak()
@@ -23,7 +24,7 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemyDamage = GetComponent<AudioSource>();
+   
     }
 
     // Update is called once per frame
@@ -47,9 +48,18 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    void playDamageSound()
+    {
+        GameObject AudioObject = Instantiate(new GameObject(), transform.position, transform.rotation);
+        AudioSource takeDamageAS = AudioObject.AddComponent<AudioSource>();
+        takeDamageAS.clip = enemyDamage;
+        takeDamageAS.pitch = Random.Range(pitchMin, pitchMax);
+        takeDamageAS.Play();
+    }
+
     void takeDamage()
     {
-        enemyDamage.Play();
+        playDamageSound();
         ScreenShake.instance.shake(0.2f,50,0.5f);
         StartCoroutine(damageBlink());
         health -= 1;
