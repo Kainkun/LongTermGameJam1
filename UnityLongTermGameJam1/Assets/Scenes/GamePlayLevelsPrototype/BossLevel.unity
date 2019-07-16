@@ -179,6 +179,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1072646964019007679, guid: aaeda92126fb49e3b98c27afa46d9ca2,
+        type: 3}
+      propertyPath: pitchMin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072646964019007679, guid: aaeda92126fb49e3b98c27afa46d9ca2,
+        type: 3}
+      propertyPath: pitchMax
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072646964019007679, guid: aaeda92126fb49e3b98c27afa46d9ca2,
+        type: 3}
+      propertyPath: enemyDamage
+      value: 
+      objectReference: {fileID: 8300000, guid: 052807ce1cd591e4cab866a389636f3d, type: 3}
+    - target: {fileID: 1072646964625728223, guid: aaeda92126fb49e3b98c27afa46d9ca2,
+        type: 3}
+      propertyPath: pitchMin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072646964625728223, guid: aaeda92126fb49e3b98c27afa46d9ca2,
+        type: 3}
+      propertyPath: pitchMax
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072646964625728223, guid: aaeda92126fb49e3b98c27afa46d9ca2,
+        type: 3}
+      propertyPath: enemyDamage
+      value: 
+      objectReference: {fileID: 8300000, guid: 052807ce1cd591e4cab866a389636f3d, type: 3}
+    - target: {fileID: 1072646964858689768, guid: aaeda92126fb49e3b98c27afa46d9ca2,
+        type: 3}
+      propertyPath: pitchMin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072646964858689768, guid: aaeda92126fb49e3b98c27afa46d9ca2,
+        type: 3}
+      propertyPath: pitchMax
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1072646964858689768, guid: aaeda92126fb49e3b98c27afa46d9ca2,
+        type: 3}
+      propertyPath: enemyDamage
+      value: 
+      objectReference: {fileID: 8300000, guid: 052807ce1cd591e4cab866a389636f3d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaeda92126fb49e3b98c27afa46d9ca2, type: 3}
 --- !u!1 &1299336740
@@ -214,6 +259,7 @@ MonoBehaviour:
   audioClipsArray:
   - {fileID: 8300000, guid: 1fcac8104c094584dadae626e6d74074, type: 3}
   - {fileID: 8300000, guid: 8f58149f6ed540c47bad07a58db70ccb, type: 3}
+  bossVolume: 0.8
 --- !u!82 &1299336742
 AudioSource:
   m_ObjectHideFlags: 0
@@ -392,10 +438,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2333867961653527402, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+    - target: {fileID: 826511727710634011, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: crazytime
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6180080803867100431, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
@@ -407,10 +453,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 826511727710634011, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+    - target: {fileID: 2333867961653527402, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
-      propertyPath: crazytime
-      value: 1
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 415ded2dfc609b44685ac79a31ccfbc1, type: 3}
