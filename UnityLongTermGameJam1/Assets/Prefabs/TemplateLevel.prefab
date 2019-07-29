@@ -58,14 +58,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0.6766882, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 60b997532699a6144a52f36c8a09cdf0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2b5381277dab7b64dbda141893b54bf8, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -139,8 +139,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 040f195ecb590d54a8e92067dcf396e4, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: a828137d97ecf584ba89aa5e881ca875, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -374,7 +374,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5d5385b980763454e91b8c833b3ef331, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d7eb98a7daf00f84590d0bcd42e2158f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1425,7 +1425,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5d5385b980763454e91b8c833b3ef331, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d7eb98a7daf00f84590d0bcd42e2158f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1743,7 +1743,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5d5385b980763454e91b8c833b3ef331, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d7eb98a7daf00f84590d0bcd42e2158f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2332,7 +2332,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 315cc697a3b9d074cbd08594bc7bae3c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c99a47d0705b1054e897458ea92e1deb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2738,7 +2738,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6ee8d0a6a5812124289d074f2e8306d0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f07b7c4639bb3a040b3f476c4f60d4c0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3186,6 +3186,44 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
+        type: 3}
+      propertyPath: healthImages.Array.data[0]
+      value: 
+      objectReference: {fileID: 5017323195254973042}
+    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
+        type: 3}
+      propertyPath: healthImages.Array.data[1]
+      value: 
+      objectReference: {fileID: 9078619036502897036}
+    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
+        type: 3}
+      propertyPath: healthImages.Array.data[2]
+      value: 
+      objectReference: {fileID: 8544126671893052884}
+    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
+        type: 3}
+      propertyPath: currentHealth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
+        type: 3}
+      propertyPath: healthSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: d7eb98a7daf00f84590d0bcd42e2158f,
+        type: 3}
+    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
+        type: 3}
+      propertyPath: healthSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 14610ba716958144f848a4c626935554,
+        type: 3}
+    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
+        type: 3}
+      propertyPath: healthSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 14610ba716958144f848a4c626935554,
+        type: 3}
     - target: {fileID: 6578194797747957949, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3241,44 +3279,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: healthImages.Array.data[0]
-      value: 
-      objectReference: {fileID: 5017323195254973042}
-    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: healthImages.Array.data[1]
-      value: 
-      objectReference: {fileID: 9078619036502897036}
-    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: healthImages.Array.data[2]
-      value: 
-      objectReference: {fileID: 8544126671893052884}
-    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: currentHealth
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: healthSprites.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: 5d5385b980763454e91b8c833b3ef331,
-        type: 3}
-    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: healthSprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: edca29ede60a4b94e88fc9ced4ecd830,
-        type: 3}
-    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: healthSprites.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: edca29ede60a4b94e88fc9ced4ecd830,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43ed9604ecbcef64a86cadd0bb85a7d5, type: 3}
 --- !u!4 &3343561495163842766 stripped
