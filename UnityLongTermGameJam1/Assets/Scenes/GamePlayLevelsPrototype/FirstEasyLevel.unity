@@ -3036,7 +3036,7 @@ PrefabInstance:
         type: 3}
       propertyPath: ShotSound
       value: 
-      objectReference: {fileID: 8300000, guid: 83991aea626d56248972c23c317f2525, type: 3}
+      objectReference: {fileID: 8300000, guid: 09767504074f4984c9c027b006f6a671, type: 3}
     - target: {fileID: 6362989805928462497, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
       propertyPath: m_Sprite
