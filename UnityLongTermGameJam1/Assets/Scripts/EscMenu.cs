@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.EventSystems;
 
 public class EscMenu : MonoBehaviour
@@ -9,6 +10,7 @@ public class EscMenu : MonoBehaviour
     GameObject Canvas;
     public GameObject eventSystem;
     public GameObject resume;
+    public AudioMixer Lowpass;
 
     void Start()
     {
@@ -35,11 +37,20 @@ public class EscMenu : MonoBehaviour
 
     }
 
+    /*public void TriggerLowpass(float LowpassOn)
+    {
+        Lowpass.SetFloat("WetMixLvl", LowpassOn);
+    }*/
+
     void toggleMenu()
     {
+
+        float LowpassOn = 0f;
+        float LowpassOff = -80f;
         if (menuOpen)
         {
             //lowpass off
+            Lowpass.SetFloat("WetMixLvl", LowpassOff);
             print("lowpass off");
 
             Time.timeScale = 1;
@@ -50,6 +61,7 @@ public class EscMenu : MonoBehaviour
         else
         {
             //lowpass on
+            Lowpass.SetFloat("WetMixLvl", LowpassOn);
             print("lowpass on");
 
             Time.timeScale = 0;
