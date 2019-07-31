@@ -8,6 +8,7 @@ public class MenuThemes : MonoBehaviour
     AudioSource menuTheme;
     public AudioClip[] audioClipArray;
     public AudioClip uiClick;
+    public AudioClip uiMouseHover;
     
     void Start()
     {
@@ -19,6 +20,11 @@ public class MenuThemes : MonoBehaviour
     public void UIClick()
     {
         menuTheme.PlayOneShot(uiClick);
+    }
+
+    public void UIMouseHover()
+    {
+        menuTheme.PlayOneShot(uiMouseHover);
     }
 
     public void UIClickStopsMusic()
