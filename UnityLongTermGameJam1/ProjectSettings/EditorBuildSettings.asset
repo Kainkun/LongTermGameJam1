@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GamePlayLevelsPrototype/FirstEasyLevel.unity
     guid: 0167c44fbdfbc8f4d88aca89f51c955b
   - enabled: 1
+    path: Assets/Scenes/GamePlayLevelsPrototype/BrittanyTemplateLevel.unity
+    guid: ebcaadb15c76b254bb45080ec38ea3cc
+  - enabled: 1
     path: Assets/Scenes/GamePlayLevelsPrototype/BossLevel.unity
     guid: e96462c63a3993e42acea21f4faf9b13
   - enabled: 1

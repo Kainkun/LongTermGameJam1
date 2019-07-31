@@ -2867,26 +2867,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 826511727710634011, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: LevelLength
-      value: 72
-      objectReference: {fileID: 0}
-    - target: {fileID: 8006931179560491807, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5677937062088089955, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 41.69995
-      objectReference: {fileID: 0}
-    - target: {fileID: 7022768070981902633, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -165
-      objectReference: {fileID: 0}
     - target: {fileID: 2868415557948599804, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
       propertyPath: healthSprites.Array.data[0]
@@ -2905,36 +2885,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: d7eb98a7daf00f84590d0bcd42e2158f,
         type: 3}
-    - target: {fileID: 4236760789962258846, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3343561497086378843, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3409346333477335142, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6362989806564562267, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: m_Name
-      value: buildBack
-      objectReference: {fileID: 0}
-    - target: {fileID: 6362989807109773573, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: m_Name
-      value: buildFront
-      objectReference: {fileID: 0}
-    - target: {fileID: 6362989807371806121, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: m_Name
-      value: fog
-      objectReference: {fileID: 0}
     - target: {fileID: 1642654133, guid: 415ded2dfc609b44685ac79a31ccfbc1, type: 3}
       propertyPath: m_FillAmount
       value: 1
@@ -3032,6 +2982,61 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8006931179560491807, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5677937062088089955, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 41.69995
+      objectReference: {fileID: 0}
+    - target: {fileID: 7022768070981902633, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -165
+      objectReference: {fileID: 0}
+    - target: {fileID: 4236760789962258846, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3343561497086378843, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3409346333477335142, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362989806564562267, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_Name
+      value: buildBack
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362989807109773573, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_Name
+      value: buildFront
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362989807371806121, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_Name
+      value: fog
+      objectReference: {fileID: 0}
+    - target: {fileID: 826511727710634011, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: LevelLength
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420164571425462854, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: ShotSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 83991aea626d56248972c23c317f2525, type: 3}
     - target: {fileID: 6362989805928462497, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
       propertyPath: m_Sprite
