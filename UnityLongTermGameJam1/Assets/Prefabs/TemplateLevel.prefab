@@ -307,6 +307,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 4575549272193107446}
+          m_MethodName: UIMouseHoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
@@ -630,6 +641,17 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 7595626823906163967}
           m_MethodName: SetButtonSelectionNull
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4575549272193107446}
+          m_MethodName: UIMouseHoverSound
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1157,6 +1179,17 @@ MonoBehaviour:
       - m_Target: {fileID: 4453507045073312192}
         m_MethodName: SetVolume
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4575549272193107446}
+        m_MethodName: UIMouseHoverSound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2589,6 +2622,17 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 4575549272193107446}
+          m_MethodName: UIMouseHoverSound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
@@ -2861,6 +2905,7 @@ GameObject:
   - component: {fileID: 3028027249314199782}
   - component: {fileID: 7595626823906163967}
   - component: {fileID: 1213432508313396784}
+  - component: {fileID: 4575549272193107446}
   m_Layer: 0
   m_Name: EscMenu
   m_TagString: Untagged
@@ -2897,6 +2942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventSystem: {fileID: 3369868831955510543}
   resume: {fileID: 6092300822297807224}
+  Lowpass: {fileID: 24100000, guid: bddba61bce4ce934396fa26ee42ecf4a, type: 2}
 --- !u!82 &1213432508313396784
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2906,7 +2952,8 @@ AudioSource:
   m_GameObject: {fileID: 8006931179560491807}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: bddba61bce4ce934396fa26ee42ecf4a,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 7384dee7cb66da441bc7111006a615ae, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2993,6 +3040,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4575549272193107446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8006931179560491807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf11a3515790fe429a6782ea04d7725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiMouseClip: {fileID: 8300000, guid: 56d1b7c10acfd5a488aef6d4929be3f8, type: 3}
 --- !u!1 &8203826684464538614
 GameObject:
   m_ObjectHideFlags: 0
@@ -3482,15 +3542,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c55ee07108a7ba64ebe57897fdf23e85, type: 3}
---- !u!4 &5683890651210793108 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8676988644179244071, guid: c55ee07108a7ba64ebe57897fdf23e85,
-    type: 3}
-  m_PrefabInstance: {fileID: 3930489489783502003}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5683890650828392483 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8676988646172785808, guid: c55ee07108a7ba64ebe57897fdf23e85,
+    type: 3}
+  m_PrefabInstance: {fileID: 3930489489783502003}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5683890651210793108 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8676988644179244071, guid: c55ee07108a7ba64ebe57897fdf23e85,
     type: 3}
   m_PrefabInstance: {fileID: 3930489489783502003}
   m_PrefabAsset: {fileID: 0}
@@ -3501,11 +3561,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8616487848111941582}
     m_Modifications:
-    - target: {fileID: 6578194797747957951, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 6578194797747957949, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3560,6 +3615,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6578194797747957951, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
         type: 3}
