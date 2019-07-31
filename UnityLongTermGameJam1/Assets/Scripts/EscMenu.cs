@@ -39,8 +39,8 @@ public class EscMenu : MonoBehaviour
     {
         if (menuOpen)
         {
-            //lowpass on
-            print("lowpass on");
+            //lowpass off
+            print("lowpass off");
 
             Time.timeScale = 1;
             Canvas.SetActive(false);
@@ -49,8 +49,8 @@ public class EscMenu : MonoBehaviour
         }
         else
         {
-            //lowpass off
-            print("lowpass off");
+            //lowpass on
+            print("lowpass on");
 
             Time.timeScale = 0;
             Canvas.SetActive(true);
