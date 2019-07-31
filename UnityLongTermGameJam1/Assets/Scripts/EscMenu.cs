@@ -39,6 +39,9 @@ public class EscMenu : MonoBehaviour
     {
         if (menuOpen)
         {
+            //lowpass on
+            print("lowpass on");
+
             Time.timeScale = 1;
             Canvas.SetActive(false);
             eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(null);
@@ -46,6 +49,9 @@ public class EscMenu : MonoBehaviour
         }
         else
         {
+            //lowpass off
+            print("lowpass off");
+
             Time.timeScale = 0;
             Canvas.SetActive(true);
             eventSystem.GetComponent<EventSystem>().SetSelectedGameObject(null);
