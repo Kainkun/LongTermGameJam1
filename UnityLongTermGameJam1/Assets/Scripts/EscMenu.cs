@@ -37,11 +37,6 @@ public class EscMenu : MonoBehaviour
 
     }
 
-    /*public void TriggerLowpass(float LowpassOn)
-    {
-        Lowpass.SetFloat("WetMixLvl", LowpassOn);
-    }*/
-
     void toggleMenu()
     {
 
