@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 6578194796865454888}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 5, y: 5, z: 10}
   m_Children: []
   m_Father: {fileID: 6578194797747957949}
   m_RootOrder: 0
@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 3988949004745335536}
   - component: {fileID: 8619486804658523485}
   - component: {fileID: 4052323839456333332}
+  - component: {fileID: 3921101091198966407}
   m_Layer: 0
   m_Name: Corpse
   m_TagString: Untagged
@@ -107,7 +108,7 @@ Transform:
   m_GameObject: {fileID: 6578194797747957951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.05, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6578194796865454895}
   m_Father: {fileID: 0}
@@ -186,7 +187,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -301,9 +302,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minMaxState: 2
+      minColor: {r: 1, g: 0.33910358, b: 0.3254717, a: 1}
+      maxColor: {r: 1, g: 0.8518497, b: 0.32549024, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4794,7 +4795,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 2100000, guid: 03dc83a86b0260544aeb5878412d985a, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4858,3 +4859,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3921101091198966407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6578194797747957951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0663c952c180ac84a8621a2fc7187611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinSpeed: 200
