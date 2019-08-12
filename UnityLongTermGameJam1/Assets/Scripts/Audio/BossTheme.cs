@@ -13,6 +13,7 @@ public class BossTheme : MonoBehaviour
     void Start()
     {
         bossThemeVer = GetComponent<AudioSource>();
+        bossThemeVer.volume = bossVolume;
         StartCoroutine(WaitAndExecute());
     }
 
@@ -22,7 +23,6 @@ public class BossTheme : MonoBehaviour
 
         while (true)
         {
-            bossThemeVer.volume = bossVolume;
             bossThemeVer.clip = audioClipsArray[Random.Range(0, audioClipsArray.Length)];
             bossThemeVer.Play();
             yield return new WaitForSecondsRealtime(22.588f); //sound loops after about 23 seconds

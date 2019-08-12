@@ -10,7 +10,7 @@ public class SteampunkMainTheme : MonoBehaviour
     void Start()
     {
         steamPunkTheme = GetComponent<AudioSource>();
-        steamPunkTheme.PlayDelayed(24.033f);
+        steamPunkTheme.PlayDelayed(24.003f);
     }
 
     // Update is called once per frame

@@ -3689,49 +3689,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8616487848111941582}
     m_Modifications:
-    - target: {fileID: 6578194797747957951, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: healthImages.Array.data[0]
-      value: 
-      objectReference: {fileID: 5017323195254973042}
-    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: healthImages.Array.data[1]
-      value: 
-      objectReference: {fileID: 9078619036502897036}
-    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: healthImages.Array.data[2]
-      value: 
-      objectReference: {fileID: 8544126671893052884}
-    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: currentHealth
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: healthSprites.Array.data[2]
-      value: 
-      objectReference: {fileID: 21300000, guid: d7eb98a7daf00f84590d0bcd42e2158f,
-        type: 3}
-    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: healthSprites.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 14610ba716958144f848a4c626935554,
-        type: 3}
-    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
-        type: 3}
-      propertyPath: healthSprites.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: 14610ba716958144f848a4c626935554,
-        type: 3}
     - target: {fileID: 6578194797747957949, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3787,6 +3744,49 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6578194797747957951, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
+        type: 3}
+      propertyPath: healthImages.Array.data[0]
+      value: 
+      objectReference: {fileID: 5017323195254973042}
+    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
+        type: 3}
+      propertyPath: healthImages.Array.data[1]
+      value: 
+      objectReference: {fileID: 9078619036502897036}
+    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
+        type: 3}
+      propertyPath: healthImages.Array.data[2]
+      value: 
+      objectReference: {fileID: 8544126671893052884}
+    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
+        type: 3}
+      propertyPath: currentHealth
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
+        type: 3}
+      propertyPath: healthSprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: d7eb98a7daf00f84590d0bcd42e2158f,
+        type: 3}
+    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
+        type: 3}
+      propertyPath: healthSprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 14610ba716958144f848a4c626935554,
+        type: 3}
+    - target: {fileID: 5972457995526090127, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
+        type: 3}
+      propertyPath: healthSprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 14610ba716958144f848a4c626935554,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43ed9604ecbcef64a86cadd0bb85a7d5, type: 3}
 --- !u!4 &3343561495163842766 stripped

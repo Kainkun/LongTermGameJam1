@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IntroDelay : MonoBehaviour
 {
-    public AudioSource introSteamPunk;
+    AudioSource introSteamPunk;
     //public AudioClip playerDamage;
 
 

@@ -99,7 +99,6 @@ AudioMixerGroupController:
   m_Effects:
   - {fileID: 244924434595887604}
   - {fileID: 244550815137503188}
-  - {fileID: 244743824830455114}
   m_UserColorIndex: 3
   m_Mute: 0
   m_Solo: 0
@@ -191,22 +190,6 @@ AudioMixerEffectController:
     m_GUID: 83f67d5674fbf86418a3d5c577f698ee
   - m_ParameterName: Sidechain Mix
     m_GUID: 196d3efcc1159b64da443234e089fa42
-  m_SendTarget: {fileID: 0}
-  m_EnableWetMix: 0
-  m_Bypass: 0
---- !u!244 &244743824830455114
-AudioMixerEffectController:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_EffectID: cd4713d5df9ce0745b15be3acd7bc259
-  m_EffectName: Lowpass Simple
-  m_MixLevel: 53902b4a74489d64aa35d89c4e9b592c
-  m_Parameters:
-  - m_ParameterName: Cutoff freq
-    m_GUID: 3a07c91dc46c8f344b33af74a422712d
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0

@@ -6,12 +6,11 @@ using UnityEngine;
 public class CyberpunkLoop : MonoBehaviour
 {
     AudioSource cyberpunkMainTheme;
-    public AudioClip CyberPunkMainTheme;
 
     public void Start()
     {
         cyberpunkMainTheme = GetComponent<AudioSource>();
-        cyberpunkMainTheme.PlayDelayed(6.0f);
+        cyberpunkMainTheme.PlayDelayed(8.7f);
     }
 
     // Update is called once per frame
