@@ -41,6 +41,7 @@ public class levelManager : MonoBehaviour
     }
     public void nextLevel()
     {
+        PlayerPrefs.SetInt("Deaths", 0);
         Score.ScoreScript.setPrevScore(Score.ScoreScript.getScore());
 
         if (GetComponent<PlayerDimensionHop>() != null)

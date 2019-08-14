@@ -9,6 +9,8 @@ public class PlayerHealth : MonoBehaviour
     public SpriteRenderer playerSprite;
     public static PlayerHealth instance;
     public bool permInvincible;
+    public bool dead;
+    public GameObject psHeal;
 
     public AudioClip playerDamage;
 
@@ -27,11 +29,17 @@ public class PlayerHealth : MonoBehaviour
         StartCoroutine(damageBlink());
         StartCoroutine(becomeInvincible(invulnAmount));
         health -= amount;
-        if (health <= 0)
+        if (health <= 0 && !dead)
             die();
     }
     private void die()
     {
+        dead = true;
+
+        if (PlayerPrefs.HasKey("Deaths"))
+            PlayerPrefs.SetInt("Deaths", PlayerPrefs.GetInt("Deaths") + 1);
+        else
+            PlayerPrefs.SetInt("Deaths", 1);
 
         Instantiate(corpse, transform.position, transform.rotation);
         FindObjectOfType<levelManager>().beginResetLevel();
@@ -67,6 +75,18 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        print("collision");
+        if (collision.tag == "Pickup" && health < 3)
+        {
+            Destroy( Instantiate(psHeal, transform), 5);
+
+            print("health");
+            health++;
+            GetComponent<BrittanyHealthHearts>().TakeDamage(3);
+            Destroy(collision.gameObject);
+            return;
+        }
+
         damagePlayer enemy = collision.gameObject.GetComponent<damagePlayer>();
         if (enemy != null && !permInvincible)
         {

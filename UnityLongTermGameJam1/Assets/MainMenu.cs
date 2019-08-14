@@ -32,6 +32,9 @@ public class MainMenu : MonoBehaviour
     {
         if(PlayerPrefs.HasKey("Volume"))
             AudioListener.volume = PlayerPrefs.GetFloat("Volume");
+        
+
+        PlayerPrefs.SetInt("Deaths", 0);
 
         slider.GetComponent<Slider>().value = AudioListener.volume;
     }
@@ -39,6 +42,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame ()
     {
+        PlayerPrefs.SetInt("Deaths", 0);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
