@@ -8,17 +8,18 @@ public class BossMovement : MonoBehaviour
     public float stopAtx;
     public float sinspeed;
     public float sinHeight;
+    public float startY;
     Vector3 pos;
 
     void Start()
     {
-        
+        startY = transform.position.y;
     }
     
     void Update()
     {
         pos = transform.position;
-        pos.y = Mathf.Sin(Time.time * sinspeed) * sinHeight;
+        pos.y = startY + Mathf.Sin(Time.time * sinspeed) * sinHeight;
         if (transform.position.x > stopAtx)
             pos.x -= enterspeed * Time.deltaTime;
 
