@@ -17,6 +17,8 @@ public class HealthPickup : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 0) return;
+
         move = Vector3.zero;
         move.x -= speed * Time.deltaTime;
         move.y = Mathf.Sin(Time.time * sinSpeed) * sinHeight;
