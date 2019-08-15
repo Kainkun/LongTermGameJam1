@@ -77,7 +77,7 @@ public class PlayerHealth : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         print("collision");
-        if (collision.tag == "Pickup" && health < 3)
+        if (collision.tag == "Pickup" && health < 3) //pick up heal
         {
             GetComponent<AudioSource>().PlayOneShot(healthClip);
             Destroy( Instantiate(psHeal, transform), 5);
