@@ -25,7 +25,7 @@ public class SceneTransition : MonoBehaviour
             GetComponent<AudioSource>().PlayOneShot(HopInSound);
         }
 
-      if (GameObject.Find("LevelPercentComplete") != null && BrittanyLevelCompletion.Script.percent >= 100 && !sound2HasPlayed)
+      if (BrittanyLevelCompletion.Script.percent >= 100 && !sound2HasPlayed)
         {
             sound2HasPlayed = true;
             GetComponent<AudioSource>().PlayOneShot(HopOutSound);
