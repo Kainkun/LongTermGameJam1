@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     public GameObject psHeal;
 
     public AudioClip playerDamage;
+    public AudioClip healthClip;
 
     // Start is called before the first frame update
     void Start()
@@ -78,6 +79,7 @@ public class PlayerHealth : MonoBehaviour
         print("collision");
         if (collision.tag == "Pickup" && health < 3)
         {
+            GetComponent<AudioSource>().PlayOneShot(healthClip);
             Destroy( Instantiate(psHeal, transform), 5);
 
             print("health");

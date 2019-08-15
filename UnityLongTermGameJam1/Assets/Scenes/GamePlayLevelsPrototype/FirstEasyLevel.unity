@@ -4399,6 +4399,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: b706464ac5ce86843ac5e3f6bf49f030,
         type: 3}
+    - target: {fileID: 7409951340917886227, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: healthPickup
+      value: 
+      objectReference: {fileID: 8300000, guid: 96deabf872f3bb64c8e9feb6aec88eb7, type: 3}
+    - target: {fileID: 7409951340917886227, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: healthClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 96deabf872f3bb64c8e9feb6aec88eb7, type: 3}
     - target: {fileID: 6180080803867100431, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
       propertyPath: OutputAudioMixerGroup
@@ -4410,12 +4420,12 @@ PrefabInstance:
       propertyPath: Volume
       value: 0.7
       objectReference: {fileID: 0}
-    - target: {fileID: 8006931179560491807, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+    - target: {fileID: 5683890651210793114, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5683890651210793114, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+    - target: {fileID: 8006931179560491807, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
       propertyPath: m_IsActive
       value: 1

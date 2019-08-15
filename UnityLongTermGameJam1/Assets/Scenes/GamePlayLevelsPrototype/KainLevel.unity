@@ -1444,6 +1444,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7409951340917886227, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: healthPickup
+      value: 
+      objectReference: {fileID: 8300000, guid: 96deabf872f3bb64c8e9feb6aec88eb7, type: 3}
+    - target: {fileID: 6180080803867100431, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243043684533222800, guid: bddba61bce4ce934396fa26ee42ecf4a,
+        type: 2}
+    - target: {fileID: 3343561495163842764, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770411573759507411, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_TagString
+      value: BulletsContainer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134933351138529326, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_Name
+      value: WeaponPickupDefault(Clone)
+      objectReference: {fileID: 0}
     - target: {fileID: 2868415557948599804, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
       propertyPath: currentHealth
@@ -1454,10 +1480,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: OnionShip
       objectReference: {fileID: 0}
+    - target: {fileID: 6362989806619492638, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21
+      objectReference: {fileID: 0}
     - target: {fileID: 6362989807109773573, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
       propertyPath: m_Name
       value: backClouds
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362989807168422997, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 6362989807371806121, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
@@ -1468,6 +1504,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362989805946818642, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362989806564562245, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: imageWidth
+      value: 2100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362989806564562245, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: speed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362989807109773575, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: imageWidth
+      value: 2100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362989807109773575, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362989807371806101, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: imageWidth
+      value: 2100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6362989807371806101, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: speed
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6362989805928462497, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
@@ -1560,72 +1631,6 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6362989806619492638, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 6362989807168422997, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 6362989805946818642, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 21
-      objectReference: {fileID: 0}
-    - target: {fileID: 3343561495163842764, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6362989806564562245, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: imageWidth
-      value: 2100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6362989806564562245, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: speed
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6362989807109773575, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: imageWidth
-      value: 2100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6362989807109773575, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: speed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6362989807371806101, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: imageWidth
-      value: 2100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6362989807371806101, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: speed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2770411573759507411, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: m_TagString
-      value: BulletsContainer
-      objectReference: {fileID: 0}
-    - target: {fileID: 4134933351138529326, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: m_Name
-      value: WeaponPickupDefault(Clone)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6180080803867100431, guid: 415ded2dfc609b44685ac79a31ccfbc1,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 243043684533222800, guid: bddba61bce4ce934396fa26ee42ecf4a,
-        type: 2}
     - target: {fileID: 2333867962698548502, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
       propertyPath: m_AnchoredPosition.x

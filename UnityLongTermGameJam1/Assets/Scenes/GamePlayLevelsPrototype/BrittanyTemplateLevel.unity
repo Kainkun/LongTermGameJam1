@@ -6660,6 +6660,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 14610ba716958144f848a4c626935554,
         type: 3}
+    - target: {fileID: 1439367768300047712, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
+        type: 3}
+      propertyPath: healthPickup
+      value: 
+      objectReference: {fileID: 8300000, guid: db8f0a2210ee8244b82ea1adedb866f9, type: 3}
+    - target: {fileID: 1439367768300047712, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
+        type: 3}
+      propertyPath: healthClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 96deabf872f3bb64c8e9feb6aec88eb7, type: 3}
+    - target: {fileID: 2371365761945519484, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243043684533222800, guid: bddba61bce4ce934396fa26ee42ecf4a,
+        type: 2}
     - target: {fileID: 5222858790577642037, guid: 43ed9604ecbcef64a86cadd0bb85a7d5,
         type: 3}
       propertyPath: sprite

@@ -2024,11 +2024,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4935580164774605783, guid: e41d34f27bf9ae04bb903644c8b285ab,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 21
-      objectReference: {fileID: 0}
     - target: {fileID: 4935580165798058144, guid: e41d34f27bf9ae04bb903644c8b285ab,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -2073,6 +2068,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4935580164774605783, guid: e41d34f27bf9ae04bb903644c8b285ab,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 4935580165632022368, guid: e41d34f27bf9ae04bb903644c8b285ab,
         type: 3}
@@ -3241,11 +3241,27 @@ PrefabInstance:
       propertyPath: health
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7409951340917886227, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: healthPickup
+      value: 
+      objectReference: {fileID: 8300000, guid: 96deabf872f3bb64c8e9feb6aec88eb7, type: 3}
+    - target: {fileID: 7409951340917886227, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: healthClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 96deabf872f3bb64c8e9feb6aec88eb7, type: 3}
     - target: {fileID: 6180080803867100431, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6180080803867100431, guid: 415ded2dfc609b44685ac79a31ccfbc1,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243043684533222800, guid: bddba61bce4ce934396fa26ee42ecf4a,
+        type: 2}
     - target: {fileID: 4764728612058994073, guid: 415ded2dfc609b44685ac79a31ccfbc1,
         type: 3}
       propertyPath: m_Enabled
