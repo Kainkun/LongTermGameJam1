@@ -5,6 +5,7 @@ using UnityEngine;
 public class SteampunkMainTheme : MonoBehaviour
 {
     AudioSource steamPunkTheme;
+    float time;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,12 @@ public class SteampunkMainTheme : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        time += Time.deltaTime;
+
+        if (time > 30 && !steamPunkTheme.isPlaying)
+        {
+            print("loop stopped, resuming");
+            steamPunkTheme.Play();
+        }
     }
 }
