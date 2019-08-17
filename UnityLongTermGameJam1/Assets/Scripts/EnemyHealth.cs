@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
+    public bool DontExplodeOnDeath;
+    public GameObject explosion;
     public int health;
     public SpriteRenderer enemySprite;
     public bool FallOnDeath;
@@ -61,13 +63,16 @@ public class EnemyHealth : MonoBehaviour
     void takeDamage()
     {
         playDamageSound();
-        ScreenShake.instance.shake(0.2f,50,0.5f);
+        
+        //ScreenShake.instance.shake(0.2f,50,0.5f);
         StartCoroutine(damageBlink());
         health -= 1;
         if(GetComponentInChildren<Slider>()!=null)
         GetComponentInChildren<Slider>().value = health; // reference to the slider
         if(health <= 0)
         {
+            if(!DontExplodeOnDeath)
+            Destroy(Instantiate(explosion, transform.position, Quaternion.identity), 10);
 
             if (Score.ScoreScript != null)
             Score.ScoreScript.AddScore(50);

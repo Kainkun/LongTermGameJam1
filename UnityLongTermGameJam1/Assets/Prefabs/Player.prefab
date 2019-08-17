@@ -5010,7 +5010,7 @@ Transform:
   m_GameObject: {fileID: 6578194797747957951}
   m_LocalRotation: {x: 1.1397552e-14, y: 0.00000021989446, z: 0.000000024587205, w: 1}
   m_LocalPosition: {x: -5, y: -0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 6578194796865454895}
   - {fileID: 2430237847868469016}
@@ -5079,6 +5079,7 @@ MonoBehaviour:
   dead: 0
   psHeal: {fileID: 348830440373972231, guid: 1c9444c3736ce8e459a43c6cb3e41b8c, type: 3}
   playerDamage: {fileID: 8300000, guid: a435500a4046abb41a0686c3c7d9e171, type: 3}
+  healthClip: {fileID: 0}
 --- !u!114 &181127340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5315,7 +5316,7 @@ MonoBehaviour:
   shootPoints:
   - {fileID: 7856602874087278822}
   bullet: {fileID: 4205412229897542554, guid: e8d4f0fb4f4378b4eb6d792beadb0ea7, type: 3}
-  shootRate: 1.25
+  shootRate: 2.5
   bulletSpeed: 15
   damage: 1
   resourceCost: 1

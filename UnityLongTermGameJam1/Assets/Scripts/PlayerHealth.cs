@@ -92,6 +92,8 @@ public class PlayerHealth : MonoBehaviour
         damagePlayer enemy = collision.gameObject.GetComponent<damagePlayer>();
         if (enemy != null && !permInvincible)
         {
+            ScreenShake.instance.shake(0.2f, 50, 0.5f);
+
             GetComponent<AudioSource>().PlayOneShot(playerDamage);
             takeDamage(enemy.damage, enemy.invulnerabilityDuration);
             if (enemy.damage < 0)

@@ -183,6 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b866ebc55e2acfa4890b11c20e757723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 5628231200257615585, guid: 63b444e3074f31440adf48542306aaba,
+    type: 3}
   health: 2
   enemySprite: {fileID: 1741967445367141522}
   FallOnDeath: 0

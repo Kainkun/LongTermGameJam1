@@ -94,7 +94,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b866ebc55e2acfa4890b11c20e757723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  DontExplodeOnDeath: 1
+  explosion: {fileID: 0}
+  health: 30
   enemySprite: {fileID: 1072646964019007678}
   FallOnDeath: 1
   enemyDamage: {fileID: 0}
@@ -221,6 +223,7 @@ MonoBehaviour:
   stopAtx: 6.5
   sinspeed: 0.5
   sinHeight: 1
+  startY: 0
 --- !u!1 &1072646964258172678
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +438,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b866ebc55e2acfa4890b11c20e757723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  DontExplodeOnDeath: 1
+  explosion: {fileID: 0}
+  health: 30
   enemySprite: {fileID: 1072646964625728222}
   FallOnDeath: 1
   enemyDamage: {fileID: 0}
@@ -561,7 +566,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b866ebc55e2acfa4890b11c20e757723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  DontExplodeOnDeath: 1
+  explosion: {fileID: 0}
+  health: 30
   enemySprite: {fileID: 1072646964858689771}
   FallOnDeath: 1
   enemyDamage: {fileID: 0}

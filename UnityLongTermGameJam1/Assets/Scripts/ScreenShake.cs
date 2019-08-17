@@ -30,8 +30,8 @@ public class ScreenShake : MonoBehaviour
         float randY = Random.Range(0, 100);
         
         while(duration > 0){
-            float x = .5f - Mathf.PerlinNoise(duration * intensity + randX, randY) * magnitude;
-            float y = .5f - Mathf.PerlinNoise(duration * intensity - randX, randY) * magnitude;
+            float x = Mathf.PerlinNoise(duration * intensity + randX, randY) * magnitude;
+            float y = Mathf.PerlinNoise(duration * intensity - randX, randY) * magnitude;
             this.transform.localPosition = initpos + new Vector3(x, y, 0);
 
             duration -= Time.deltaTime;

@@ -52,4 +52,10 @@ public class BrittanyLevelChanger : MonoBehaviour
         levelToLoad = -1;
         animator.SetTrigger("FadeOut");
     }
+
+    public void deleteScoreUI()
+    {
+        if(GameObject.FindGameObjectWithTag("ScoreCanvas") != null)
+        Destroy(GameObject.FindGameObjectWithTag("ScoreCanvas"), 2);
+    }
 }

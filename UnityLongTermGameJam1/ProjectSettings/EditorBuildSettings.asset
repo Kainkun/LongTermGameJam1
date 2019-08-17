@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GamePlayLevelsPrototype/BossLevel.unity
     guid: e96462c63a3993e42acea21f4faf9b13
   - enabled: 1
+    path: Assets/Scenes/GamePlayLevelsPrototype/WinScreen.unity
+    guid: 687ef272a980f024993919fbb9e76cee
+  - enabled: 1
     path: Assets/Scenes/CreditsScene.unity
     guid: b6fcaf51fd3568f42b2d68b2d7e1c800
   m_configObjects: {}

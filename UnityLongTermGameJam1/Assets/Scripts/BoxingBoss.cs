@@ -159,8 +159,8 @@ public class BoxingBoss : MonoBehaviour
 
         yield return new WaitForSeconds(5f);
         Score.ScoreScript.setPrevScore(0);
-        Destroy(GameObject.FindGameObjectWithTag("ScoreCanvas"),2);
-        FindObjectOfType<BrittanyLevelChanger>().FadeToLevel(0);
+
+        FindObjectOfType<BrittanyLevelChanger>().FadeToNextLevel();
 
     }
 }
