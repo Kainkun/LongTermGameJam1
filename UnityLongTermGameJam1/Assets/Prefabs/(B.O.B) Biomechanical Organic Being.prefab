@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DontExplodeOnDeath: 1
   explosion: {fileID: 0}
-  health: 30
+  health: 40
   enemySprite: {fileID: 1072646964019007678}
   FallOnDeath: 1
   enemyDamage: {fileID: 0}
@@ -440,7 +440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DontExplodeOnDeath: 1
   explosion: {fileID: 0}
-  health: 30
+  health: 40
   enemySprite: {fileID: 1072646964625728222}
   FallOnDeath: 1
   enemyDamage: {fileID: 0}
@@ -568,7 +568,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DontExplodeOnDeath: 1
   explosion: {fileID: 0}
-  health: 30
+  health: 40
   enemySprite: {fileID: 1072646964858689771}
   FallOnDeath: 1
   enemyDamage: {fileID: 0}
